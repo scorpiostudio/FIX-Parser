@@ -1,0 +1,3945 @@
+{
+    "common_fields": [
+        "BeginString", 
+        "BodyLength", 
+        "MsgType", 
+        "SenderCompID", 
+        "TargetCompID", 
+        "OnBehalfOfCompID", 
+        "DeliverToCompID", 
+        "SecureDataLen", 
+        "SecureData", 
+        "MsgSeqNum", 
+        "SenderSubID", 
+        "SenderLocationID", 
+        "TargetSubID", 
+        "TargetLocationID", 
+        "OnBehalfOfSubID", 
+        "OnBehalfOfLocationID", 
+        "DeliverToSubID", 
+        "DeliverToLocationID", 
+        "PossDupFlag", 
+        "PossResend", 
+        "SendingTime", 
+        "OrigSendingTime", 
+        "XmlDataLen", 
+        "XmlData", 
+        "MessageEncoding", 
+        "LastMsgSeqNumProcessed", 
+        "OnBehalfOfSendingTime", 
+        "SignatureLength", 
+        "Signature", 
+        "CheckSum"
+    ], 
+    "fields": {
+        "1": {
+            "name": "Account", 
+            "type": "STRING"
+        }, 
+        "2": {
+            "name": "AdvId", 
+            "type": "STRING"
+        }, 
+        "3": {
+            "name": "AdvRefID", 
+            "type": "STRING"
+        }, 
+        "4": {
+            "name": "AdvSide", 
+            "type": "CHAR", 
+            "values": {
+                "B": {
+                    "description": "BUY"
+                }, 
+                "S": {
+                    "description": "SELL"
+                }, 
+                "T": {
+                    "description": "TRADE"
+                }, 
+                "X": {
+                    "description": "CROSS"
+                }
+            }
+        }, 
+        "5": {
+            "name": "AdvTransType", 
+            "type": "STRING", 
+            "values": {
+                "C": {
+                    "description": "CANCEL"
+                }, 
+                "N": {
+                    "description": "NEW"
+                }, 
+                "R": {
+                    "description": "REPLACE"
+                }
+            }
+        }, 
+        "6": {
+            "name": "AvgPx", 
+            "type": "PRICE"
+        }, 
+        "7": {
+            "name": "BeginSeqNo", 
+            "type": "INT"
+        }, 
+        "8": {
+            "name": "BeginString", 
+            "type": "STRING"
+        }, 
+        "9": {
+            "name": "BodyLength", 
+            "type": "INT"
+        }, 
+        "10": {
+            "name": "CheckSum", 
+            "type": "STRING"
+        }, 
+        "11": {
+            "name": "ClOrdID", 
+            "type": "STRING"
+        }, 
+        "12": {
+            "name": "Commission", 
+            "type": "AMT"
+        }, 
+        "13": {
+            "name": "CommType", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "PER_SHARE"
+                }, 
+                "2": {
+                    "description": "PERCENTAGE"
+                }, 
+                "3": {
+                    "description": "ABSOLUTE"
+                }
+            }
+        }, 
+        "14": {
+            "name": "CumQty", 
+            "type": "QTY"
+        }, 
+        "15": {
+            "name": "Currency", 
+            "type": "CURRENCY"
+        }, 
+        "16": {
+            "name": "EndSeqNo", 
+            "type": "INT"
+        }, 
+        "17": {
+            "name": "ExecID", 
+            "type": "STRING"
+        }, 
+        "18": {
+            "name": "ExecInst", 
+            "type": "MULTIPLEVALUESTRING", 
+            "values": {
+                "0": {
+                    "description": "STAY_ON_OFFERSIDE"
+                }, 
+                "1": {
+                    "description": "NOT_HELD"
+                }, 
+                "2": {
+                    "description": "WORK"
+                }, 
+                "3": {
+                    "description": "GO_ALONG"
+                }, 
+                "4": {
+                    "description": "OVER_THE_DAY"
+                }, 
+                "5": {
+                    "description": "HELD"
+                }, 
+                "6": {
+                    "description": "PARTICIPATE_DONT_INITIATE"
+                }, 
+                "7": {
+                    "description": "STRICT_SCALE"
+                }, 
+                "8": {
+                    "description": "TRY_TO_SCALE"
+                }, 
+                "9": {
+                    "description": "STAY_ON_BIDSIDE"
+                }, 
+                "A": {
+                    "description": "NO_CROSS"
+                }, 
+                "B": {
+                    "description": "OK_TO_CROSS"
+                }, 
+                "C": {
+                    "description": "CALL_FIRST"
+                }, 
+                "D": {
+                    "description": "PERCENT_OF_VOLUME"
+                }, 
+                "E": {
+                    "description": "DO_NOT_INCREASE"
+                }, 
+                "F": {
+                    "description": "DO_NOT_REDUCE"
+                }, 
+                "G": {
+                    "description": "ALL_OR_NONE"
+                }, 
+                "I": {
+                    "description": "INSTITUTIONS_ONLY"
+                }, 
+                "L": {
+                    "description": "LAST_PEG"
+                }, 
+                "M": {
+                    "description": "MID_PRICE_PEG"
+                }, 
+                "N": {
+                    "description": "NON_NEGOTIABLE"
+                }, 
+                "O": {
+                    "description": "OPENING_PEG"
+                }, 
+                "P": {
+                    "description": "MARKET_PEG"
+                }, 
+                "R": {
+                    "description": "PRIMARY_PEG"
+                }, 
+                "S": {
+                    "description": "SUSPEND"
+                }, 
+                "T": {
+                    "description": "FIXED_PEG_TO_LOCAL_BEST_BID_OR_OFFER_AT_TIME_OF_ORDER"
+                }, 
+                "U": {
+                    "description": "CUSTOMER_DISPLAY_INSTRUCTION"
+                }, 
+                "V": {
+                    "description": "NETTING"
+                }, 
+                "W": {
+                    "description": "PEG_TO_VWAP"
+                }
+            }
+        }, 
+        "19": {
+            "name": "ExecRefID", 
+            "type": "STRING"
+        }, 
+        "20": {
+            "name": "ExecTransType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "CANCEL"
+                }, 
+                "2": {
+                    "description": "CORRECT"
+                }, 
+                "3": {
+                    "description": "STATUS"
+                }
+            }
+        }, 
+        "21": {
+            "name": "HandlInst", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "AUTOMATED_EXECUTION_ORDER_PRIVATE_NO_BROKER_INTERVENTION"
+                }, 
+                "2": {
+                    "description": "AUTOMATED_EXECUTION_ORDER_PUBLIC_BROKER_INTERVENTION_OK"
+                }, 
+                "3": {
+                    "description": "MANUAL_ORDER_BEST_EXECUTION"
+                }
+            }
+        }, 
+        "22": {
+            "name": "IDSource", 
+            "type": "STRING", 
+            "values": {
+                "1": {
+                    "description": "CUSIP"
+                }, 
+                "2": {
+                    "description": "SEDOL"
+                }, 
+                "3": {
+                    "description": "QUIK"
+                }, 
+                "4": {
+                    "description": "ISIN_NUMBER"
+                }, 
+                "5": {
+                    "description": "RIC_CODE"
+                }, 
+                "6": {
+                    "description": "ISO_CURRENCY_CODE"
+                }, 
+                "7": {
+                    "description": "ISO_COUNTRY_CODE"
+                }, 
+                "8": {
+                    "description": "EXCHANGE_SYMBOL"
+                }, 
+                "9": {
+                    "description": "CONSOLIDATED_TAPE_ASSOCIATION"
+                }
+            }
+        }, 
+        "23": {
+            "name": "IOIid", 
+            "type": "STRING"
+        }, 
+        "24": {
+            "name": "IOIOthSvc", 
+            "type": "CHAR"
+        }, 
+        "25": {
+            "name": "IOIQltyInd", 
+            "type": "CHAR", 
+            "values": {
+                "H": {
+                    "description": "HIGH"
+                }, 
+                "L": {
+                    "description": "LOW"
+                }, 
+                "M": {
+                    "description": "MEDIUM"
+                }
+            }
+        }, 
+        "26": {
+            "name": "IOIRefID", 
+            "type": "STRING"
+        }, 
+        "27": {
+            "name": "IOIShares", 
+            "type": "STRING", 
+            "values": {
+                "L": {
+                    "description": "LARGE"
+                }, 
+                "M": {
+                    "description": "MEDIUM"
+                }, 
+                "S": {
+                    "description": "SMALL"
+                }
+            }
+        }, 
+        "28": {
+            "name": "IOITransType", 
+            "type": "CHAR", 
+            "values": {
+                "C": {
+                    "description": "CANCEL"
+                }, 
+                "N": {
+                    "description": "NEW"
+                }, 
+                "R": {
+                    "description": "REPLACE"
+                }
+            }
+        }, 
+        "29": {
+            "name": "LastCapacity", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "AGENT"
+                }, 
+                "2": {
+                    "description": "CROSS_AS_AGENT"
+                }, 
+                "3": {
+                    "description": "CROSS_AS_PRINCIPAL"
+                }, 
+                "4": {
+                    "description": "PRINCIPAL"
+                }
+            }
+        }, 
+        "30": {
+            "name": "LastMkt", 
+            "type": "EXCHANGE"
+        }, 
+        "31": {
+            "name": "LastPx", 
+            "type": "PRICE"
+        }, 
+        "32": {
+            "name": "LastShares", 
+            "type": "QTY"
+        }, 
+        "33": {
+            "name": "LinesOfText", 
+            "type": "INT"
+        }, 
+        "34": {
+            "name": "MsgSeqNum", 
+            "type": "INT"
+        }, 
+        "35": {
+            "name": "MsgType", 
+            "type": "STRING", 
+            "values": {
+                "0": {
+                    "description": "HEARTBEAT"
+                }, 
+                "1": {
+                    "description": "TEST_REQUEST"
+                }, 
+                "2": {
+                    "description": "RESEND_REQUEST"
+                }, 
+                "3": {
+                    "description": "REJECT"
+                }, 
+                "4": {
+                    "description": "SEQUENCE_RESET"
+                }, 
+                "5": {
+                    "description": "LOGOUT"
+                }, 
+                "6": {
+                    "description": "INDICATION_OF_INTEREST"
+                }, 
+                "7": {
+                    "description": "ADVERTISEMENT"
+                }, 
+                "8": {
+                    "description": "EXECUTION_REPORT"
+                }, 
+                "9": {
+                    "description": "ORDER_CANCEL_REJECT"
+                }, 
+                "A": {
+                    "description": "LOGON"
+                }, 
+                "B": {
+                    "description": "NEWS"
+                }, 
+                "C": {
+                    "description": "EMAIL"
+                }, 
+                "D": {
+                    "description": "ORDER_SINGLE"
+                }, 
+                "E": {
+                    "description": "ORDER_LIST"
+                }, 
+                "F": {
+                    "description": "ORDER_CANCEL_REQUEST"
+                }, 
+                "G": {
+                    "description": "ORDER_CANCEL_REPLACE_REQUEST"
+                }, 
+                "H": {
+                    "description": "ORDER_STATUS_REQUEST"
+                }, 
+                "J": {
+                    "description": "ALLOCATION"
+                }, 
+                "K": {
+                    "description": "LIST_CANCEL_REQUEST"
+                }, 
+                "L": {
+                    "description": "LIST_EXECUTE"
+                }, 
+                "M": {
+                    "description": "LIST_STATUS_REQUEST"
+                }, 
+                "N": {
+                    "description": "LIST_STATUS"
+                }, 
+                "P": {
+                    "description": "ALLOCATION_ACK"
+                }, 
+                "Q": {
+                    "description": "DONT_KNOW_TRADE"
+                }, 
+                "R": {
+                    "description": "QUOTE_REQUEST"
+                }, 
+                "S": {
+                    "description": "QUOTE"
+                }, 
+                "T": {
+                    "description": "SETTLEMENT_INSTRUCTIONS"
+                }, 
+                "V": {
+                    "description": "MARKET_DATA_REQUEST"
+                }, 
+                "W": {
+                    "description": "MARKET_DATA_SNAPSHOT_FULL_REFRESH"
+                }, 
+                "X": {
+                    "description": "MARKET_DATA_INCREMENTAL_REFRESH"
+                }, 
+                "Y": {
+                    "description": "MARKET_DATA_REQUEST_REJECT"
+                }, 
+                "Z": {
+                    "description": "QUOTE_CANCEL"
+                }, 
+                "a": {
+                    "description": "QUOTE_STATUS_REQUEST"
+                }, 
+                "b": {
+                    "description": "QUOTE_ACKNOWLEDGEMENT"
+                }, 
+                "c": {
+                    "description": "SECURITY_DEFINITION_REQUEST"
+                }, 
+                "d": {
+                    "description": "SECURITY_DEFINITION"
+                }, 
+                "e": {
+                    "description": "SECURITY_STATUS_REQUEST"
+                }, 
+                "f": {
+                    "description": "SECURITY_STATUS"
+                }, 
+                "g": {
+                    "description": "TRADING_SESSION_STATUS_REQUEST"
+                }, 
+                "h": {
+                    "description": "TRADING_SESSION_STATUS"
+                }, 
+                "i": {
+                    "description": "MASS_QUOTE"
+                }, 
+                "j": {
+                    "description": "BUSINESS_MESSAGE_REJECT"
+                }, 
+                "k": {
+                    "description": "BID_REQUEST"
+                }, 
+                "l": {
+                    "description": "BID_RESPONSE"
+                }, 
+                "m": {
+                    "description": "LIST_STRIKE_PRICE"
+                }
+            }
+        }, 
+        "36": {
+            "name": "NewSeqNo", 
+            "type": "INT"
+        }, 
+        "37": {
+            "name": "OrderID", 
+            "type": "STRING"
+        }, 
+        "38": {
+            "name": "OrderQty", 
+            "type": "QTY"
+        }, 
+        "39": {
+            "name": "OrdStatus", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "PARTIALLY_FILLED"
+                }, 
+                "2": {
+                    "description": "FILLED"
+                }, 
+                "3": {
+                    "description": "DONE_FOR_DAY"
+                }, 
+                "4": {
+                    "description": "CANCELED"
+                }, 
+                "5": {
+                    "description": "REPLACED"
+                }, 
+                "6": {
+                    "description": "PENDING_CANCEL"
+                }, 
+                "7": {
+                    "description": "STOPPED"
+                }, 
+                "8": {
+                    "description": "REJECTED"
+                }, 
+                "9": {
+                    "description": "SUSPENDED"
+                }, 
+                "A": {
+                    "description": "PENDING_NEW"
+                }, 
+                "B": {
+                    "description": "CALCULATED"
+                }, 
+                "C": {
+                    "description": "EXPIRED"
+                }, 
+                "D": {
+                    "description": "ACCEPTED_FOR_BIDDING"
+                }, 
+                "E": {
+                    "description": "PENDING_REPLACE"
+                }
+            }
+        }, 
+        "40": {
+            "name": "OrdType", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "MARKET"
+                }, 
+                "2": {
+                    "description": "LIMIT"
+                }, 
+                "3": {
+                    "description": "STOP"
+                }, 
+                "4": {
+                    "description": "STOP_LIMIT"
+                }, 
+                "5": {
+                    "description": "MARKET_ON_CLOSE"
+                }, 
+                "6": {
+                    "description": "WITH_OR_WITHOUT"
+                }, 
+                "7": {
+                    "description": "LIMIT_OR_BETTER"
+                }, 
+                "8": {
+                    "description": "LIMIT_WITH_OR_WITHOUT"
+                }, 
+                "9": {
+                    "description": "ON_BASIS"
+                }, 
+                "A": {
+                    "description": "ON_CLOSE"
+                }, 
+                "B": {
+                    "description": "LIMIT_ON_CLOSE"
+                }, 
+                "C": {
+                    "description": "FOREX_C"
+                }, 
+                "D": {
+                    "description": "PREVIOUSLY_QUOTED"
+                }, 
+                "E": {
+                    "description": "PREVIOUSLY_INDICATED"
+                }, 
+                "F": {
+                    "description": "FOREX_F"
+                }, 
+                "G": {
+                    "description": "FOREX_G"
+                }, 
+                "H": {
+                    "description": "FOREX_H"
+                }, 
+                "I": {
+                    "description": "FUNARI"
+                }, 
+                "P": {
+                    "description": "PEGGED"
+                }
+            }
+        }, 
+        "41": {
+            "name": "OrigClOrdID", 
+            "type": "STRING"
+        }, 
+        "42": {
+            "name": "OrigTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "43": {
+            "name": "PossDupFlag", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "44": {
+            "name": "Price", 
+            "type": "PRICE"
+        }, 
+        "45": {
+            "name": "RefSeqNum", 
+            "type": "INT"
+        }, 
+        "46": {
+            "name": "RelatdSym", 
+            "type": "STRING"
+        }, 
+        "47": {
+            "name": "Rule80A", 
+            "type": "CHAR", 
+            "values": {
+                "A": {
+                    "description": "AGENCY_SINGLE_ORDER"
+                }, 
+                "B": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_B"
+                }, 
+                "C": {
+                    "description": "PROGRAM_ORDER_NON_INDEX_ARB_FOR_MEMBER_FIRM_ORG"
+                }, 
+                "D": {
+                    "description": "PROGRAM_ORDER_INDEX_ARB_FOR_MEMBER_FIRM_ORG"
+                }, 
+                "E": {
+                    "description": "REGISTERED_EQUITY_MARKET_MAKER_TRADES"
+                }, 
+                "F": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_F"
+                }, 
+                "H": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_H"
+                }, 
+                "I": {
+                    "description": "INDIVIDUAL_INVESTOR_SINGLE_ORDER"
+                }, 
+                "J": {
+                    "description": "PROGRAM_ORDER_INDEX_ARB_FOR_INDIVIDUAL_CUSTOMER"
+                }, 
+                "K": {
+                    "description": "PROGRAM_ORDER_NON_INDEX_ARB_FOR_INDIVIDUAL_CUSTOMER"
+                }, 
+                "L": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_FOR_MEMBER_COMPETING_MARKET_MAKER_AFFILIATED_WITH_THE_FIRM_CLEARING_THE_TRADE"
+                }, 
+                "M": {
+                    "description": "PROGRAM_ORDER_INDEX_ARB_FOR_OTHER_MEMBER"
+                }, 
+                "N": {
+                    "description": "PROGRAM_ORDER_NON_INDEX_ARB_FOR_OTHER_MEMBER"
+                }, 
+                "O": {
+                    "description": "COMPETING_DEALER_TRADES_O"
+                }, 
+                "P": {
+                    "description": "PRINCIPAL"
+                }, 
+                "R": {
+                    "description": "COMPETING_DEALER_TRADES_R"
+                }, 
+                "S": {
+                    "description": "SPECIALIST_TRADES"
+                }, 
+                "T": {
+                    "description": "COMPETING_DEALER_TRADES_T"
+                }, 
+                "U": {
+                    "description": "PROGRAM_ORDER_INDEX_ARB_FOR_OTHER_AGENCY"
+                }, 
+                "W": {
+                    "description": "ALL_OTHER_ORDERS_AS_AGENT_FOR_OTHER_MEMBER"
+                }, 
+                "X": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_FOR_MEMBER_COMPETING_MARKET_MAKER_NOT_AFFILIATED_WITH_THE_FIRM_CLEARING_THE_TRADE"
+                }, 
+                "Y": {
+                    "description": "PROGRAM_ORDER_NON_INDEX_ARB_FOR_OTHER_AGENCY"
+                }, 
+                "Z": {
+                    "description": "SHORT_EXEMPT_TRANSACTION_FOR_NON_MEMBER_COMPETING_MARKET_MAKER"
+                }
+            }
+        }, 
+        "48": {
+            "name": "SecurityID", 
+            "type": "STRING"
+        }, 
+        "49": {
+            "name": "SenderCompID", 
+            "type": "STRING"
+        }, 
+        "50": {
+            "name": "SenderSubID", 
+            "type": "STRING"
+        }, 
+        "51": {
+            "name": "SendingDate", 
+            "type": "LOCALMKTDATE"
+        }, 
+        "52": {
+            "name": "SendingTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "53": {
+            "name": "Shares", 
+            "type": "QTY"
+        }, 
+        "54": {
+            "name": "Side", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "BUY"
+                }, 
+                "2": {
+                    "description": "SELL"
+                }, 
+                "3": {
+                    "description": "BUY_MINUS"
+                }, 
+                "4": {
+                    "description": "SELL_PLUS"
+                }, 
+                "5": {
+                    "description": "SELL_SHORT"
+                }, 
+                "6": {
+                    "description": "SELL_SHORT_EXEMPT"
+                }, 
+                "7": {
+                    "description": "UNDISCLOSED"
+                }, 
+                "8": {
+                    "description": "CROSS"
+                }, 
+                "9": {
+                    "description": "CROSS_SHORT"
+                }
+            }
+        }, 
+        "55": {
+            "name": "Symbol", 
+            "type": "STRING"
+        }, 
+        "56": {
+            "name": "TargetCompID", 
+            "type": "STRING"
+        }, 
+        "57": {
+            "name": "TargetSubID", 
+            "type": "STRING"
+        }, 
+        "58": {
+            "name": "Text", 
+            "type": "STRING"
+        }, 
+        "59": {
+            "name": "TimeInForce", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "DAY"
+                }, 
+                "1": {
+                    "description": "GOOD_TILL_CANCEL"
+                }, 
+                "2": {
+                    "description": "AT_THE_OPENING"
+                }, 
+                "3": {
+                    "description": "IMMEDIATE_OR_CANCEL"
+                }, 
+                "4": {
+                    "description": "FILL_OR_KILL"
+                }, 
+                "5": {
+                    "description": "GOOD_TILL_CROSSING"
+                }, 
+                "6": {
+                    "description": "GOOD_TILL_DATE"
+                }
+            }
+        }, 
+        "60": {
+            "name": "TransactTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "61": {
+            "name": "Urgency", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NORMAL"
+                }, 
+                "1": {
+                    "description": "FLASH"
+                }, 
+                "2": {
+                    "description": "BACKGROUND"
+                }
+            }
+        }, 
+        "62": {
+            "name": "ValidUntilTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "63": {
+            "name": "SettlmntTyp", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "REGULAR"
+                }, 
+                "1": {
+                    "description": "CASH"
+                }, 
+                "2": {
+                    "description": "NEXT_DAY"
+                }, 
+                "3": {
+                    "description": "T_PLUS_2"
+                }, 
+                "4": {
+                    "description": "T_PLUS_3"
+                }, 
+                "5": {
+                    "description": "T_PLUS_4"
+                }, 
+                "6": {
+                    "description": "FUTURE"
+                }, 
+                "7": {
+                    "description": "WHEN_ISSUED"
+                }, 
+                "8": {
+                    "description": "SELLERS_OPTION"
+                }, 
+                "9": {
+                    "description": "T_PLUS_5"
+                }
+            }
+        }, 
+        "64": {
+            "name": "FutSettDate", 
+            "type": "LOCALMKTDATE"
+        }, 
+        "65": {
+            "name": "SymbolSfx", 
+            "type": "STRING"
+        }, 
+        "66": {
+            "name": "ListID", 
+            "type": "STRING"
+        }, 
+        "67": {
+            "name": "ListSeqNo", 
+            "type": "INT"
+        }, 
+        "68": {
+            "name": "TotNoOrders", 
+            "type": "INT"
+        }, 
+        "69": {
+            "name": "ListExecInst", 
+            "type": "STRING"
+        }, 
+        "70": {
+            "name": "AllocID", 
+            "type": "STRING"
+        }, 
+        "71": {
+            "name": "AllocTransType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "REPLACE"
+                }, 
+                "2": {
+                    "description": "CANCEL"
+                }, 
+                "3": {
+                    "description": "PRELIMINARY"
+                }, 
+                "4": {
+                    "description": "CALCULATED"
+                }, 
+                "5": {
+                    "description": "CALCULATED_WITHOUT_PRELIMINARY"
+                }
+            }
+        }, 
+        "72": {
+            "name": "RefAllocID", 
+            "type": "STRING"
+        }, 
+        "73": {
+            "name": "NoOrders", 
+            "type": "INT"
+        }, 
+        "74": {
+            "name": "AvgPrxPrecision", 
+            "type": "INT"
+        }, 
+        "75": {
+            "name": "TradeDate", 
+            "type": "LOCALMKTDATE"
+        }, 
+        "76": {
+            "name": "ExecBroker", 
+            "type": "STRING"
+        }, 
+        "77": {
+            "name": "OpenClose", 
+            "type": "CHAR", 
+            "values": {
+                "C": {
+                    "description": "CLOSE"
+                }, 
+                "O": {
+                    "description": "OPEN"
+                }
+            }
+        }, 
+        "78": {
+            "name": "NoAllocs", 
+            "type": "INT"
+        }, 
+        "79": {
+            "name": "AllocAccount", 
+            "type": "STRING"
+        }, 
+        "80": {
+            "name": "AllocShares", 
+            "type": "QTY"
+        }, 
+        "81": {
+            "name": "ProcessCode", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "REGULAR"
+                }, 
+                "1": {
+                    "description": "SOFT_DOLLAR"
+                }, 
+                "2": {
+                    "description": "STEP_IN"
+                }, 
+                "3": {
+                    "description": "STEP_OUT"
+                }, 
+                "4": {
+                    "description": "SOFT_DOLLAR_STEP_IN"
+                }, 
+                "5": {
+                    "description": "SOFT_DOLLAR_STEP_OUT"
+                }, 
+                "6": {
+                    "description": "PLAN_SPONSOR"
+                }
+            }
+        }, 
+        "82": {
+            "name": "NoRpts", 
+            "type": "INT"
+        }, 
+        "83": {
+            "name": "RptSeq", 
+            "type": "INT"
+        }, 
+        "84": {
+            "name": "CxlQty", 
+            "type": "QTY"
+        }, 
+        "85": {
+            "name": "NoDlvyInst", 
+            "type": "INT"
+        }, 
+        "86": {
+            "name": "DlvyInst", 
+            "type": "STRING"
+        }, 
+        "87": {
+            "name": "AllocStatus", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "ACCEPTED"
+                }, 
+                "1": {
+                    "description": "REJECTED"
+                }, 
+                "2": {
+                    "description": "PARTIAL_ACCEPT"
+                }, 
+                "3": {
+                    "description": "RECEIVED"
+                }
+            }
+        }, 
+        "88": {
+            "name": "AllocRejCode", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "UNKNOWN_ACCOUNT"
+                }, 
+                "1": {
+                    "description": "INCORRECT_QUANTITY"
+                }, 
+                "2": {
+                    "description": "INCORRECT_AVERAGE_PRICE"
+                }, 
+                "3": {
+                    "description": "UNKNOWN_EXECUTING_BROKER_MNEMONIC"
+                }, 
+                "4": {
+                    "description": "COMMISSION_DIFFERENCE"
+                }, 
+                "5": {
+                    "description": "UNKNOWN_ORDERID"
+                }, 
+                "6": {
+                    "description": "UNKNOWN_LISTID"
+                }, 
+                "7": {
+                    "description": "OTHER"
+                }
+            }
+        }, 
+        "89": {
+            "name": "Signature", 
+            "type": "DATA"
+        }, 
+        "90": {
+            "name": "SecureDataLen", 
+            "type": "LENGTH"
+        }, 
+        "91": {
+            "name": "SecureData", 
+            "type": "DATA"
+        }, 
+        "92": {
+            "name": "BrokerOfCredit", 
+            "type": "STRING"
+        }, 
+        "93": {
+            "name": "SignatureLength", 
+            "type": "LENGTH"
+        }, 
+        "94": {
+            "name": "EmailType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "REPLY"
+                }, 
+                "2": {
+                    "description": "ADMIN_REPLY"
+                }
+            }
+        }, 
+        "95": {
+            "name": "RawDataLength", 
+            "type": "LENGTH"
+        }, 
+        "96": {
+            "name": "RawData", 
+            "type": "DATA"
+        }, 
+        "97": {
+            "name": "PossResend", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "98": {
+            "name": "EncryptMethod", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "NONE"
+                }, 
+                "1": {
+                    "description": "PKCS"
+                }, 
+                "2": {
+                    "description": "DES"
+                }, 
+                "3": {
+                    "description": "PKCS_DES"
+                }, 
+                "4": {
+                    "description": "PGP_DES"
+                }, 
+                "5": {
+                    "description": "PGP_DES_MD5"
+                }, 
+                "6": {
+                    "description": "PEM_DES_MD5"
+                }
+            }
+        }, 
+        "99": {
+            "name": "StopPx", 
+            "type": "PRICE"
+        }, 
+        "100": {
+            "name": "ExDestination", 
+            "type": "EXCHANGE"
+        }, 
+        "102": {
+            "name": "CxlRejReason", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "TOO_LATE_TO_CANCEL"
+                }, 
+                "1": {
+                    "description": "UNKNOWN_ORDER"
+                }, 
+                "2": {
+                    "description": "BROKER_OPTION"
+                }, 
+                "3": {
+                    "description": "ORDER_ALREADY_IN_PENDING_CANCEL_OR_PENDING_REPLACE_STATUS"
+                }
+            }
+        }, 
+        "103": {
+            "name": "OrdRejReason", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "BROKER_OPTION"
+                }, 
+                "1": {
+                    "description": "UNKNOWN_SYMBOL"
+                }, 
+                "2": {
+                    "description": "EXCHANGE_CLOSED"
+                }, 
+                "3": {
+                    "description": "ORDER_EXCEEDS_LIMIT"
+                }, 
+                "4": {
+                    "description": "TOO_LATE_TO_ENTER"
+                }, 
+                "5": {
+                    "description": "UNKNOWN_ORDER"
+                }, 
+                "6": {
+                    "description": "DUPLICATE_ORDER"
+                }, 
+                "7": {
+                    "description": "DUPLICATE_OF_A_VERBALLY_COMMUNICATED_ORDER"
+                }, 
+                "8": {
+                    "description": "STALE_ORDER"
+                }
+            }
+        }, 
+        "104": {
+            "name": "IOIQualifier", 
+            "type": "CHAR", 
+            "values": {
+                "A": {
+                    "description": "ALL_OR_NONE"
+                }, 
+                "C": {
+                    "description": "AT_THE_CLOSE"
+                }, 
+                "I": {
+                    "description": "IN_TOUCH_WITH"
+                }, 
+                "L": {
+                    "description": "LIMIT"
+                }, 
+                "M": {
+                    "description": "MORE_BEHIND"
+                }, 
+                "O": {
+                    "description": "AT_THE_OPEN"
+                }, 
+                "P": {
+                    "description": "TAKING_A_POSITION"
+                }, 
+                "Q": {
+                    "description": "AT_THE_MARKET"
+                }, 
+                "R": {
+                    "description": "READY_TO_TRADE"
+                }, 
+                "S": {
+                    "description": "PORTFOLIO_SHOW_N"
+                }, 
+                "T": {
+                    "description": "THROUGH_THE_DAY"
+                }, 
+                "V": {
+                    "description": "VERSUS"
+                }, 
+                "W": {
+                    "description": "INDICATION"
+                }, 
+                "X": {
+                    "description": "CROSSING_OPPORTUNITY"
+                }, 
+                "Y": {
+                    "description": "AT_THE_MIDPOINT"
+                }, 
+                "Z": {
+                    "description": "PRE_OPEN"
+                }
+            }
+        }, 
+        "105": {
+            "name": "WaveNo", 
+            "type": "STRING"
+        }, 
+        "106": {
+            "name": "Issuer", 
+            "type": "STRING"
+        }, 
+        "107": {
+            "name": "SecurityDesc", 
+            "type": "STRING"
+        }, 
+        "108": {
+            "name": "HeartBtInt", 
+            "type": "INT"
+        }, 
+        "109": {
+            "name": "ClientID", 
+            "type": "STRING"
+        }, 
+        "110": {
+            "name": "MinQty", 
+            "type": "QTY"
+        }, 
+        "111": {
+            "name": "MaxFloor", 
+            "type": "QTY"
+        }, 
+        "112": {
+            "name": "TestReqID", 
+            "type": "STRING"
+        }, 
+        "113": {
+            "name": "ReportToExch", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "114": {
+            "name": "LocateReqd", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "115": {
+            "name": "OnBehalfOfCompID", 
+            "type": "STRING"
+        }, 
+        "116": {
+            "name": "OnBehalfOfSubID", 
+            "type": "STRING"
+        }, 
+        "117": {
+            "name": "QuoteID", 
+            "type": "STRING"
+        }, 
+        "118": {
+            "name": "NetMoney", 
+            "type": "AMT"
+        }, 
+        "119": {
+            "name": "SettlCurrAmt", 
+            "type": "AMT"
+        }, 
+        "120": {
+            "name": "SettlCurrency", 
+            "type": "CURRENCY"
+        }, 
+        "121": {
+            "name": "ForexReq", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "122": {
+            "name": "OrigSendingTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "123": {
+            "name": "GapFillFlag", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "124": {
+            "name": "NoExecs", 
+            "type": "INT"
+        }, 
+        "125": {
+            "name": "CxlType", 
+            "type": "CHAR"
+        }, 
+        "126": {
+            "name": "ExpireTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "127": {
+            "name": "DKReason", 
+            "type": "CHAR", 
+            "values": {
+                "A": {
+                    "description": "UNKNOWN_SYMBOL"
+                }, 
+                "B": {
+                    "description": "WRONG_SIDE"
+                }, 
+                "C": {
+                    "description": "QUANTITY_EXCEEDS_ORDER"
+                }, 
+                "D": {
+                    "description": "NO_MATCHING_ORDER"
+                }, 
+                "E": {
+                    "description": "PRICE_EXCEEDS_LIMIT"
+                }, 
+                "Z": {
+                    "description": "OTHER"
+                }
+            }
+        }, 
+        "128": {
+            "name": "DeliverToCompID", 
+            "type": "STRING"
+        }, 
+        "129": {
+            "name": "DeliverToSubID", 
+            "type": "STRING"
+        }, 
+        "130": {
+            "name": "IOINaturalFlag", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "131": {
+            "name": "QuoteReqID", 
+            "type": "STRING"
+        }, 
+        "132": {
+            "name": "BidPx", 
+            "type": "PRICE"
+        }, 
+        "133": {
+            "name": "OfferPx", 
+            "type": "PRICE"
+        }, 
+        "134": {
+            "name": "BidSize", 
+            "type": "QTY"
+        }, 
+        "135": {
+            "name": "OfferSize", 
+            "type": "QTY"
+        }, 
+        "136": {
+            "name": "NoMiscFees", 
+            "type": "INT"
+        }, 
+        "137": {
+            "name": "MiscFeeAmt", 
+            "type": "AMT"
+        }, 
+        "138": {
+            "name": "MiscFeeCurr", 
+            "type": "CURRENCY"
+        }, 
+        "139": {
+            "name": "MiscFeeType", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "REGULATORY"
+                }, 
+                "2": {
+                    "description": "TAX"
+                }, 
+                "3": {
+                    "description": "LOCAL_COMMISSION"
+                }, 
+                "4": {
+                    "description": "EXCHANGE_FEES"
+                }, 
+                "5": {
+                    "description": "STAMP"
+                }, 
+                "6": {
+                    "description": "LEVY"
+                }, 
+                "7": {
+                    "description": "OTHER"
+                }, 
+                "8": {
+                    "description": "MARKUP"
+                }, 
+                "9": {
+                    "description": "CONSUMPTION_TAX"
+                }
+            }
+        }, 
+        "140": {
+            "name": "PrevClosePx", 
+            "type": "PRICE"
+        }, 
+        "141": {
+            "name": "ResetSeqNumFlag", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "142": {
+            "name": "SenderLocationID", 
+            "type": "STRING"
+        }, 
+        "143": {
+            "name": "TargetLocationID", 
+            "type": "STRING"
+        }, 
+        "144": {
+            "name": "OnBehalfOfLocationID", 
+            "type": "STRING"
+        }, 
+        "145": {
+            "name": "DeliverToLocationID", 
+            "type": "STRING"
+        }, 
+        "146": {
+            "name": "NoRelatedSym", 
+            "type": "INT"
+        }, 
+        "147": {
+            "name": "Subject", 
+            "type": "STRING"
+        }, 
+        "148": {
+            "name": "Headline", 
+            "type": "STRING"
+        }, 
+        "149": {
+            "name": "URLLink", 
+            "type": "STRING"
+        }, 
+        "150": {
+            "name": "ExecType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "PARTIAL_FILL"
+                }, 
+                "2": {
+                    "description": "FILL"
+                }, 
+                "3": {
+                    "description": "DONE_FOR_DAY"
+                }, 
+                "4": {
+                    "description": "CANCELED"
+                }, 
+                "5": {
+                    "description": "REPLACE"
+                }, 
+                "6": {
+                    "description": "PENDING_CANCEL"
+                }, 
+                "7": {
+                    "description": "STOPPED"
+                }, 
+                "8": {
+                    "description": "REJECTED"
+                }, 
+                "9": {
+                    "description": "SUSPENDED"
+                }, 
+                "A": {
+                    "description": "PENDING_NEW"
+                }, 
+                "B": {
+                    "description": "CALCULATED"
+                }, 
+                "C": {
+                    "description": "EXPIRED"
+                }, 
+                "D": {
+                    "description": "RESTATED"
+                }, 
+                "E": {
+                    "description": "PENDING_REPLACE"
+                }
+            }
+        }, 
+        "151": {
+            "name": "LeavesQty", 
+            "type": "QTY"
+        }, 
+        "152": {
+            "name": "CashOrderQty", 
+            "type": "QTY"
+        }, 
+        "153": {
+            "name": "AllocAvgPx", 
+            "type": "PRICE"
+        }, 
+        "154": {
+            "name": "AllocNetMoney", 
+            "type": "AMT"
+        }, 
+        "155": {
+            "name": "SettlCurrFxRate", 
+            "type": "FLOAT"
+        }, 
+        "156": {
+            "name": "SettlCurrFxRateCalc", 
+            "type": "CHAR", 
+            "values": {
+                "D": {
+                    "description": "DIVIDE"
+                }, 
+                "M": {
+                    "description": "MULTIPLY"
+                }
+            }
+        }, 
+        "157": {
+            "name": "NumDaysInterest", 
+            "type": "INT"
+        }, 
+        "158": {
+            "name": "AccruedInterestRate", 
+            "type": "FLOAT"
+        }, 
+        "159": {
+            "name": "AccruedInterestAmt", 
+            "type": "AMT"
+        }, 
+        "160": {
+            "name": "SettlInstMode", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "DEFAULT"
+                }, 
+                "1": {
+                    "description": "STANDING_INSTRUCTIONS_PROVIDED"
+                }, 
+                "2": {
+                    "description": "SPECIFIC_ALLOCATION_ACCOUNT_OVERRIDING"
+                }, 
+                "3": {
+                    "description": "SPECIFIC_ALLOCATION_ACCOUNT_STANDING"
+                }
+            }
+        }, 
+        "161": {
+            "name": "AllocText", 
+            "type": "STRING"
+        }, 
+        "162": {
+            "name": "SettlInstID", 
+            "type": "STRING"
+        }, 
+        "163": {
+            "name": "SettlInstTransType", 
+            "type": "CHAR", 
+            "values": {
+                "C": {
+                    "description": "CANCEL"
+                }, 
+                "N": {
+                    "description": "NEW"
+                }, 
+                "R": {
+                    "description": "REPLACE"
+                }
+            }
+        }, 
+        "164": {
+            "name": "EmailThreadID", 
+            "type": "STRING"
+        }, 
+        "165": {
+            "name": "SettlInstSource", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "BROKERS_INSTRUCTIONS"
+                }, 
+                "2": {
+                    "description": "INSTITUTIONS_INSTRUCTIONS"
+                }
+            }
+        }, 
+        "166": {
+            "name": "SettlLocation", 
+            "type": "STRING", 
+            "values": {
+                "CED": {
+                    "description": "CEDEL"
+                }, 
+                "DTC": {
+                    "description": "DEPOSITORY_TRUST_COMPANY"
+                }, 
+                "EUR": {
+                    "description": "EUROCLEAR"
+                }, 
+                "FED": {
+                    "description": "FEDERAL_BOOK_ENTRY"
+                }, 
+                "ISO Country Code": {
+                    "description": "LOCAL_MARKET_SETTLE_LOCATION"
+                }, 
+                "PNY": {
+                    "description": "PHYSICAL"
+                }, 
+                "PTC": {
+                    "description": "PARTICIPANT_TRUST_COMPANY"
+                }
+            }
+        }, 
+        "167": {
+            "name": "SecurityType", 
+            "type": "STRING", 
+            "values": {
+                "?": {
+                    "description": "WILDCARD_ENTRY"
+                }, 
+                "BA": {
+                    "description": "BANKERS_ACCEPTANCE"
+                }, 
+                "CB": {
+                    "description": "CONVERTIBLE_BOND"
+                }, 
+                "CD": {
+                    "description": "CERTIFICATE_OF_DEPOSIT"
+                }, 
+                "CMO": {
+                    "description": "COLLATERALIZE_MORTGAGE_OBLIGATION"
+                }, 
+                "CORP": {
+                    "description": "CORPORATE_BOND"
+                }, 
+                "CP": {
+                    "description": "COMMERCIAL_PAPER"
+                }, 
+                "CPP": {
+                    "description": "CORPORATE_PRIVATE_PLACEMENT"
+                }, 
+                "CS": {
+                    "description": "COMMON_STOCK"
+                }, 
+                "FHA": {
+                    "description": "FEDERAL_HOUSING_AUTHORITY"
+                }, 
+                "FHL": {
+                    "description": "FEDERAL_HOME_LOAN"
+                }, 
+                "FN": {
+                    "description": "FEDERAL_NATIONAL_MORTGAGE_ASSOCIATION"
+                }, 
+                "FOR": {
+                    "description": "FOREIGN_EXCHANGE_CONTRACT"
+                }, 
+                "FUT": {
+                    "description": "FUTURE"
+                }, 
+                "GN": {
+                    "description": "GOVERNMENT_NATIONAL_MORTGAGE_ASSOCIATION"
+                }, 
+                "GOVT": {
+                    "description": "TREASURIES_PLUS_AGENCY_DEBENTURE"
+                }, 
+                "IET": {
+                    "description": "MORTGAGE_IOETTE"
+                }, 
+                "MF": {
+                    "description": "MUTUAL_FUND"
+                }, 
+                "MIO": {
+                    "description": "MORTGAGE_INTEREST_ONLY"
+                }, 
+                "MPO": {
+                    "description": "MORTGAGE_PRINCIPAL_ONLY"
+                }, 
+                "MPP": {
+                    "description": "MORTGAGE_PRIVATE_PLACEMENT"
+                }, 
+                "MPT": {
+                    "description": "MISCELLANEOUS_PASS_THRU"
+                }, 
+                "MUNI": {
+                    "description": "MUNICIPAL_BOND"
+                }, 
+                "NONE": {
+                    "description": "NO_ISITC_SECURITY_TYPE"
+                }, 
+                "OPT": {
+                    "description": "OPTION"
+                }, 
+                "PS": {
+                    "description": "PREFERRED_STOCK"
+                }, 
+                "RP": {
+                    "description": "REPURCHASE_AGREEMENT"
+                }, 
+                "RVRP": {
+                    "description": "REVERSE_REPURCHASE_AGREEMENT"
+                }, 
+                "SL": {
+                    "description": "STUDENT_LOAN_MARKETING_ASSOCIATION"
+                }, 
+                "TD": {
+                    "description": "TIME_DEPOSIT"
+                }, 
+                "USTB": {
+                    "description": "US_TREASURY_BILL"
+                }, 
+                "WAR": {
+                    "description": "WARRANT"
+                }, 
+                "ZOO": {
+                    "description": "CATS_TIGERS_LIONS"
+                }
+            }
+        }, 
+        "168": {
+            "name": "EffectiveTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "169": {
+            "name": "StandInstDbType", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "OTHER"
+                }, 
+                "1": {
+                    "description": "DTC_SID"
+                }, 
+                "2": {
+                    "description": "THOMSON_ALERT"
+                }, 
+                "3": {
+                    "description": "A_GLOBAL_CUSTODIAN"
+                }
+            }
+        }, 
+        "170": {
+            "name": "StandInstDbName", 
+            "type": "STRING"
+        }, 
+        "171": {
+            "name": "StandInstDbID", 
+            "type": "STRING"
+        }, 
+        "172": {
+            "name": "SettlDeliveryType", 
+            "type": "INT"
+        }, 
+        "173": {
+            "name": "SettlDepositoryCode", 
+            "type": "STRING"
+        }, 
+        "174": {
+            "name": "SettlBrkrCode", 
+            "type": "STRING"
+        }, 
+        "175": {
+            "name": "SettlInstCode", 
+            "type": "STRING"
+        }, 
+        "176": {
+            "name": "SecuritySettlAgentName", 
+            "type": "STRING"
+        }, 
+        "177": {
+            "name": "SecuritySettlAgentCode", 
+            "type": "STRING"
+        }, 
+        "178": {
+            "name": "SecuritySettlAgentAcctNum", 
+            "type": "STRING"
+        }, 
+        "179": {
+            "name": "SecuritySettlAgentAcctName", 
+            "type": "STRING"
+        }, 
+        "180": {
+            "name": "SecuritySettlAgentContactName", 
+            "type": "STRING"
+        }, 
+        "181": {
+            "name": "SecuritySettlAgentContactPhone", 
+            "type": "STRING"
+        }, 
+        "182": {
+            "name": "CashSettlAgentName", 
+            "type": "STRING"
+        }, 
+        "183": {
+            "name": "CashSettlAgentCode", 
+            "type": "STRING"
+        }, 
+        "184": {
+            "name": "CashSettlAgentAcctNum", 
+            "type": "STRING"
+        }, 
+        "185": {
+            "name": "CashSettlAgentAcctName", 
+            "type": "STRING"
+        }, 
+        "186": {
+            "name": "CashSettlAgentContactName", 
+            "type": "STRING"
+        }, 
+        "187": {
+            "name": "CashSettlAgentContactPhone", 
+            "type": "STRING"
+        }, 
+        "188": {
+            "name": "BidSpotRate", 
+            "type": "PRICE"
+        }, 
+        "189": {
+            "name": "BidForwardPoints", 
+            "type": "PRICEOFFSET"
+        }, 
+        "190": {
+            "name": "OfferSpotRate", 
+            "type": "PRICE"
+        }, 
+        "191": {
+            "name": "OfferForwardPoints", 
+            "type": "PRICEOFFSET"
+        }, 
+        "192": {
+            "name": "OrderQty2", 
+            "type": "QTY"
+        }, 
+        "193": {
+            "name": "FutSettDate2", 
+            "type": "LOCALMKTDATE"
+        }, 
+        "194": {
+            "name": "LastSpotRate", 
+            "type": "PRICE"
+        }, 
+        "195": {
+            "name": "LastForwardPoints", 
+            "type": "PRICEOFFSET"
+        }, 
+        "196": {
+            "name": "AllocLinkID", 
+            "type": "STRING"
+        }, 
+        "197": {
+            "name": "AllocLinkType", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "F_X_NETTING"
+                }, 
+                "1": {
+                    "description": "F_X_SWAP"
+                }
+            }
+        }, 
+        "198": {
+            "name": "SecondaryOrderID", 
+            "type": "STRING"
+        }, 
+        "199": {
+            "name": "NoIOIQualifiers", 
+            "type": "INT"
+        }, 
+        "200": {
+            "name": "MaturityMonthYear", 
+            "type": "MONTHYEAR"
+        }, 
+        "201": {
+            "name": "PutOrCall", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "PUT"
+                }, 
+                "1": {
+                    "description": "CALL"
+                }
+            }
+        }, 
+        "202": {
+            "name": "StrikePrice", 
+            "type": "PRICE"
+        }, 
+        "203": {
+            "name": "CoveredOrUncovered", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "COVERED"
+                }, 
+                "1": {
+                    "description": "UNCOVERED"
+                }
+            }
+        }, 
+        "204": {
+            "name": "CustomerOrFirm", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "CUSTOMER"
+                }, 
+                "1": {
+                    "description": "FIRM"
+                }
+            }
+        }, 
+        "205": {
+            "name": "MaturityDay", 
+            "type": "DAYOFMONTH"
+        }, 
+        "206": {
+            "name": "OptAttribute", 
+            "type": "CHAR"
+        }, 
+        "207": {
+            "name": "SecurityExchange", 
+            "type": "EXCHANGE"
+        }, 
+        "208": {
+            "name": "NotifyBrokerOfCredit", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "209": {
+            "name": "AllocHandlInst", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "MATCH"
+                }, 
+                "2": {
+                    "description": "FORWARD"
+                }, 
+                "3": {
+                    "description": "FORWARD_AND_MATCH"
+                }
+            }
+        }, 
+        "210": {
+            "name": "MaxShow", 
+            "type": "QTY"
+        }, 
+        "211": {
+            "name": "PegDifference", 
+            "type": "PRICEOFFSET"
+        }, 
+        "212": {
+            "name": "XmlDataLen", 
+            "type": "LENGTH"
+        }, 
+        "213": {
+            "name": "XmlData", 
+            "type": "DATA"
+        }, 
+        "214": {
+            "name": "SettlInstRefID", 
+            "type": "STRING"
+        }, 
+        "215": {
+            "name": "NoRoutingIDs", 
+            "type": "INT"
+        }, 
+        "216": {
+            "name": "RoutingType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "TARGET_FIRM"
+                }, 
+                "2": {
+                    "description": "TARGET_LIST"
+                }, 
+                "3": {
+                    "description": "BLOCK_FIRM"
+                }, 
+                "4": {
+                    "description": "BLOCK_LIST"
+                }
+            }
+        }, 
+        "217": {
+            "name": "RoutingID", 
+            "type": "STRING"
+        }, 
+        "218": {
+            "name": "SpreadToBenchmark", 
+            "type": "PRICEOFFSET"
+        }, 
+        "219": {
+            "name": "Benchmark", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "CURVE"
+                }, 
+                "2": {
+                    "description": "5_YR"
+                }, 
+                "3": {
+                    "description": "OLD_5"
+                }, 
+                "4": {
+                    "description": "10_YR"
+                }, 
+                "5": {
+                    "description": "OLD_10"
+                }, 
+                "6": {
+                    "description": "30_YR"
+                }, 
+                "7": {
+                    "description": "OLD_30"
+                }, 
+                "8": {
+                    "description": "3_MO_LIBOR"
+                }, 
+                "9": {
+                    "description": "6_MO_LIBOR"
+                }
+            }
+        }, 
+        "223": {
+            "name": "CouponRate", 
+            "type": "FLOAT"
+        }, 
+        "231": {
+            "name": "ContractMultiplier", 
+            "type": "FLOAT"
+        }, 
+        "262": {
+            "name": "MDReqID", 
+            "type": "STRING"
+        }, 
+        "263": {
+            "name": "SubscriptionRequestType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "SNAPSHOT"
+                }, 
+                "1": {
+                    "description": "SNAPSHOT_PLUS_UPDATES"
+                }, 
+                "2": {
+                    "description": "DISABLE_PREVIOUS_SNAPSHOT_PLUS_UPDATE_REQUEST"
+                }
+            }
+        }, 
+        "264": {
+            "name": "MarketDepth", 
+            "type": "INT"
+        }, 
+        "265": {
+            "name": "MDUpdateType", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "FULL_REFRESH"
+                }, 
+                "1": {
+                    "description": "INCREMENTAL_REFRESH"
+                }
+            }
+        }, 
+        "266": {
+            "name": "AggregatedBook", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "267": {
+            "name": "NoMDEntryTypes", 
+            "type": "INT"
+        }, 
+        "268": {
+            "name": "NoMDEntries", 
+            "type": "INT"
+        }, 
+        "269": {
+            "name": "MDEntryType", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "BID"
+                }, 
+                "1": {
+                    "description": "OFFER"
+                }, 
+                "2": {
+                    "description": "TRADE"
+                }, 
+                "3": {
+                    "description": "INDEX_VALUE"
+                }, 
+                "4": {
+                    "description": "OPENING_PRICE"
+                }, 
+                "5": {
+                    "description": "CLOSING_PRICE"
+                }, 
+                "6": {
+                    "description": "SETTLEMENT_PRICE"
+                }, 
+                "7": {
+                    "description": "TRADING_SESSION_HIGH_PRICE"
+                }, 
+                "8": {
+                    "description": "TRADING_SESSION_LOW_PRICE"
+                }, 
+                "9": {
+                    "description": "TRADING_SESSION_VWAP_PRICE"
+                }
+            }
+        }, 
+        "270": {
+            "name": "MDEntryPx", 
+            "type": "PRICE"
+        }, 
+        "271": {
+            "name": "MDEntrySize", 
+            "type": "QTY"
+        }, 
+        "272": {
+            "name": "MDEntryDate", 
+            "type": "UTCDATE"
+        }, 
+        "273": {
+            "name": "MDEntryTime", 
+            "type": "UTCTIMEONLY"
+        }, 
+        "274": {
+            "name": "TickDirection", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "PLUS_TICK"
+                }, 
+                "1": {
+                    "description": "ZERO_PLUS_TICK"
+                }, 
+                "2": {
+                    "description": "MINUS_TICK"
+                }, 
+                "3": {
+                    "description": "ZERO_MINUS_TICK"
+                }
+            }
+        }, 
+        "275": {
+            "name": "MDMkt", 
+            "type": "EXCHANGE"
+        }, 
+        "276": {
+            "name": "QuoteCondition", 
+            "type": "MULTIPLEVALUESTRING", 
+            "values": {
+                "A": {
+                    "description": "OPEN"
+                }, 
+                "B": {
+                    "description": "CLOSED"
+                }, 
+                "C": {
+                    "description": "EXCHANGE_BEST"
+                }, 
+                "D": {
+                    "description": "CONSOLIDATED_BEST"
+                }, 
+                "E": {
+                    "description": "LOCKED"
+                }, 
+                "F": {
+                    "description": "CROSSED"
+                }, 
+                "G": {
+                    "description": "DEPTH"
+                }, 
+                "H": {
+                    "description": "FAST_TRADING"
+                }, 
+                "I": {
+                    "description": "NON_FIRM"
+                }
+            }
+        }, 
+        "277": {
+            "name": "TradeCondition", 
+            "type": "MULTIPLEVALUESTRING", 
+            "values": {
+                "A": {
+                    "description": "CASH"
+                }, 
+                "B": {
+                    "description": "AVERAGE_PRICE_TRADE"
+                }, 
+                "C": {
+                    "description": "CASH_TRADE"
+                }, 
+                "D": {
+                    "description": "NEXT_DAY"
+                }, 
+                "E": {
+                    "description": "OPENING"
+                }, 
+                "F": {
+                    "description": "INTRADAY_TRADE_DETAIL"
+                }, 
+                "G": {
+                    "description": "RULE_127_TRADE"
+                }, 
+                "H": {
+                    "description": "RULE_155_TRADE"
+                }, 
+                "I": {
+                    "description": "SOLD_LAST"
+                }, 
+                "J": {
+                    "description": "NEXT_DAY_TRADE"
+                }, 
+                "K": {
+                    "description": "OPENED"
+                }, 
+                "L": {
+                    "description": "SELLER"
+                }, 
+                "M": {
+                    "description": "SOLD"
+                }, 
+                "N": {
+                    "description": "STOPPED_STOCK"
+                }
+            }
+        }, 
+        "278": {
+            "name": "MDEntryID", 
+            "type": "STRING"
+        }, 
+        "279": {
+            "name": "MDUpdateAction", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "NEW"
+                }, 
+                "1": {
+                    "description": "CHANGE"
+                }, 
+                "2": {
+                    "description": "DELETE"
+                }
+            }
+        }, 
+        "280": {
+            "name": "MDEntryRefID", 
+            "type": "STRING"
+        }, 
+        "281": {
+            "name": "MDReqRejReason", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "UNKNOWN_SYMBOL"
+                }, 
+                "1": {
+                    "description": "DUPLICATE_MDREQID"
+                }, 
+                "2": {
+                    "description": "INSUFFICIENT_BANDWIDTH"
+                }, 
+                "3": {
+                    "description": "INSUFFICIENT_PERMISSIONS"
+                }, 
+                "4": {
+                    "description": "UNSUPPORTED_SUBSCRIPTIONREQUESTTYPE"
+                }, 
+                "5": {
+                    "description": "UNSUPPORTED_MARKETDEPTH"
+                }, 
+                "6": {
+                    "description": "UNSUPPORTED_MDUPDATETYPE"
+                }, 
+                "7": {
+                    "description": "UNSUPPORTED_AGGREGATEDBOOK"
+                }, 
+                "8": {
+                    "description": "UNSUPPORTED_MDENTRYTYPE"
+                }
+            }
+        }, 
+        "282": {
+            "name": "MDEntryOriginator", 
+            "type": "STRING"
+        }, 
+        "283": {
+            "name": "LocationID", 
+            "type": "STRING"
+        }, 
+        "284": {
+            "name": "DeskID", 
+            "type": "STRING"
+        }, 
+        "285": {
+            "name": "DeleteReason", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "CANCELATION"
+                }, 
+                "1": {
+                    "description": "ERROR"
+                }
+            }
+        }, 
+        "286": {
+            "name": "OpenCloseSettleFlag", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "DAILY_OPEN"
+                }, 
+                "1": {
+                    "description": "SESSION_OPEN"
+                }, 
+                "2": {
+                    "description": "DELIVERY_SETTLEMENT_PRICE"
+                }
+            }
+        }, 
+        "287": {
+            "name": "SellerDays", 
+            "type": "INT"
+        }, 
+        "288": {
+            "name": "MDEntryBuyer", 
+            "type": "STRING"
+        }, 
+        "289": {
+            "name": "MDEntrySeller", 
+            "type": "STRING"
+        }, 
+        "290": {
+            "name": "MDEntryPositionNo", 
+            "type": "INT"
+        }, 
+        "291": {
+            "name": "FinancialStatus", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "BANKRUPT"
+                }
+            }
+        }, 
+        "292": {
+            "name": "CorporateAction", 
+            "type": "CHAR", 
+            "values": {
+                "A": {
+                    "description": "EX_DIVIDEND"
+                }, 
+                "B": {
+                    "description": "EX_DISTRIBUTION"
+                }, 
+                "C": {
+                    "description": "EX_RIGHTS"
+                }, 
+                "D": {
+                    "description": "NEW"
+                }, 
+                "E": {
+                    "description": "EX_INTEREST"
+                }
+            }
+        }, 
+        "293": {
+            "name": "DefBidSize", 
+            "type": "QTY"
+        }, 
+        "294": {
+            "name": "DefOfferSize", 
+            "type": "QTY"
+        }, 
+        "295": {
+            "name": "NoQuoteEntries", 
+            "type": "INT"
+        }, 
+        "296": {
+            "name": "NoQuoteSets", 
+            "type": "INT"
+        }, 
+        "297": {
+            "name": "QuoteAckStatus", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "ACCEPTED"
+                }, 
+                "1": {
+                    "description": "CANCELED_FOR_SYMBOL"
+                }, 
+                "2": {
+                    "description": "CANCELED_FOR_SECURITY_TYPE"
+                }, 
+                "3": {
+                    "description": "CANCELED_FOR_UNDERLYING"
+                }, 
+                "4": {
+                    "description": "CANCELED_ALL"
+                }, 
+                "5": {
+                    "description": "REJECTED"
+                }
+            }
+        }, 
+        "298": {
+            "name": "QuoteCancelType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "CANCEL_FOR_SYMBOL"
+                }, 
+                "2": {
+                    "description": "CANCEL_FOR_SECURITY_TYPE"
+                }, 
+                "3": {
+                    "description": "CANCEL_FOR_UNDERLYING_SYMBOL"
+                }, 
+                "4": {
+                    "description": "CANCEL_FOR_ALL_QUOTES"
+                }
+            }
+        }, 
+        "299": {
+            "name": "QuoteEntryID", 
+            "type": "STRING"
+        }, 
+        "300": {
+            "name": "QuoteRejectReason", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "UNKNOWN_SYMBOL"
+                }, 
+                "2": {
+                    "description": "EXCHANGE"
+                }, 
+                "3": {
+                    "description": "QUOTE_REQUEST_EXCEEDS_LIMIT"
+                }, 
+                "4": {
+                    "description": "TOO_LATE_TO_ENTER"
+                }, 
+                "5": {
+                    "description": "UNKNOWN_QUOTE"
+                }, 
+                "6": {
+                    "description": "DUPLICATE_QUOTE"
+                }, 
+                "7": {
+                    "description": "INVALID_BID_ASK_SPREAD"
+                }, 
+                "8": {
+                    "description": "INVALID_PRICE"
+                }, 
+                "9": {
+                    "description": "NOT_AUTHORIZED_TO_QUOTE_SECURITY"
+                }
+            }
+        }, 
+        "301": {
+            "name": "QuoteResponseLevel", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "NO_ACKNOWLEDGEMENT"
+                }, 
+                "1": {
+                    "description": "ACKNOWLEDGE_ONLY_NEGATIVE_OR_ERRONEOUS_QUOTES"
+                }, 
+                "2": {
+                    "description": "ACKNOWLEDGE_EACH_QUOTE_MESSAGES"
+                }
+            }
+        }, 
+        "302": {
+            "name": "QuoteSetID", 
+            "type": "STRING"
+        }, 
+        "303": {
+            "name": "QuoteRequestType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "MANUAL"
+                }, 
+                "2": {
+                    "description": "AUTOMATIC"
+                }
+            }
+        }, 
+        "304": {
+            "name": "TotQuoteEntries", 
+            "type": "INT"
+        }, 
+        "305": {
+            "name": "UnderlyingIDSource", 
+            "type": "STRING"
+        }, 
+        "306": {
+            "name": "UnderlyingIssuer", 
+            "type": "STRING"
+        }, 
+        "307": {
+            "name": "UnderlyingSecurityDesc", 
+            "type": "STRING"
+        }, 
+        "308": {
+            "name": "UnderlyingSecurityExchange", 
+            "type": "EXCHANGE"
+        }, 
+        "309": {
+            "name": "UnderlyingSecurityID", 
+            "type": "STRING"
+        }, 
+        "310": {
+            "name": "UnderlyingSecurityType", 
+            "type": "STRING"
+        }, 
+        "311": {
+            "name": "UnderlyingSymbol", 
+            "type": "STRING"
+        }, 
+        "312": {
+            "name": "UnderlyingSymbolSfx", 
+            "type": "STRING"
+        }, 
+        "313": {
+            "name": "UnderlyingMaturityMonthYear", 
+            "type": "MONTHYEAR"
+        }, 
+        "314": {
+            "name": "UnderlyingMaturityDay", 
+            "type": "DAYOFMONTH"
+        }, 
+        "315": {
+            "name": "UnderlyingPutOrCall", 
+            "type": "INT"
+        }, 
+        "316": {
+            "name": "UnderlyingStrikePrice", 
+            "type": "PRICE"
+        }, 
+        "317": {
+            "name": "UnderlyingOptAttribute", 
+            "type": "CHAR"
+        }, 
+        "318": {
+            "name": "UnderlyingCurrency", 
+            "type": "CURRENCY"
+        }, 
+        "319": {
+            "name": "RatioQty", 
+            "type": "QTY"
+        }, 
+        "320": {
+            "name": "SecurityReqID", 
+            "type": "STRING"
+        }, 
+        "321": {
+            "name": "SecurityRequestType", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "REQUEST_SECURITY_IDENTITY_AND_SPECIFICATIONS"
+                }, 
+                "1": {
+                    "description": "REQUEST_SECURITY_IDENTITY_FOR_THE_SPECIFICATIONS_PROVIDED"
+                }, 
+                "2": {
+                    "description": "REQUEST_LIST_SECURITY_TYPES"
+                }, 
+                "3": {
+                    "description": "REQUEST_LIST_SECURITIES"
+                }
+            }
+        }, 
+        "322": {
+            "name": "SecurityResponseID", 
+            "type": "STRING"
+        }, 
+        "323": {
+            "name": "SecurityResponseType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "ACCEPT_SECURITY_PROPOSAL_AS_IS"
+                }, 
+                "2": {
+                    "description": "ACCEPT_SECURITY_PROPOSAL_WITH_REVISIONS_AS_INDICATED_IN_THE_MESSAGE"
+                }, 
+                "3": {
+                    "description": "LIST_OF_SECURITY_TYPES_RETURNED_PER_REQUEST"
+                }, 
+                "4": {
+                    "description": "LIST_OF_SECURITIES_RETURNED_PER_REQUEST"
+                }, 
+                "5": {
+                    "description": "REJECT_SECURITY_PROPOSAL"
+                }, 
+                "6": {
+                    "description": "CAN_NOT_MATCH_SELECTION_CRITERIA"
+                }
+            }
+        }, 
+        "324": {
+            "name": "SecurityStatusReqID", 
+            "type": "STRING"
+        }, 
+        "325": {
+            "name": "UnsolicitedIndicator", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "326": {
+            "name": "SecurityTradingStatus", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "OPENING_DELAY"
+                }, 
+                "10": {
+                    "description": "MARKET_ON_CLOSE_IMBALANCE_SELL"
+                }, 
+                "12": {
+                    "description": "NO_MARKET_IMBALANCE"
+                }, 
+                "13": {
+                    "description": "NO_MARKET_ON_CLOSE_IMBALANCE"
+                }, 
+                "14": {
+                    "description": "ITS_PRE_OPENING"
+                }, 
+                "15": {
+                    "description": "NEW_PRICE_INDICATION"
+                }, 
+                "16": {
+                    "description": "TRADE_DISSEMINATION_TIME"
+                }, 
+                "17": {
+                    "description": "READY_TO_TRADE"
+                }, 
+                "18": {
+                    "description": "NOT_AVAILABLE_FOR_TRADING"
+                }, 
+                "19": {
+                    "description": "NOT_TRADED_ON_THIS_MARKET"
+                }, 
+                "2": {
+                    "description": "TRADING_HALT"
+                }, 
+                "20": {
+                    "description": "UNKNOWN_OR_INVALID"
+                }, 
+                "3": {
+                    "description": "RESUME"
+                }, 
+                "4": {
+                    "description": "NO_OPEN_NO_RESUME"
+                }, 
+                "5": {
+                    "description": "PRICE_INDICATION"
+                }, 
+                "6": {
+                    "description": "TRADING_RANGE_INDICATION"
+                }, 
+                "7": {
+                    "description": "MARKET_IMBALANCE_BUY"
+                }, 
+                "8": {
+                    "description": "MARKET_IMBALANCE_SELL"
+                }, 
+                "9": {
+                    "description": "MARKET_ON_CLOSE_IMBALANCE_BUY"
+                }
+            }
+        }, 
+        "327": {
+            "name": "HaltReasonChar", 
+            "type": "CHAR", 
+            "values": {
+                "D": {
+                    "description": "NEWS_DISSEMINATION"
+                }, 
+                "E": {
+                    "description": "ORDER_INFLUX"
+                }, 
+                "I": {
+                    "description": "ORDER_IMBALANCE"
+                }, 
+                "M": {
+                    "description": "ADDITIONAL_INFORMATION"
+                }, 
+                "P": {
+                    "description": "NEWS_PENDING"
+                }, 
+                "X": {
+                    "description": "EQUIPMENT_CHANGEOVER"
+                }
+            }
+        }, 
+        "328": {
+            "name": "InViewOfCommon", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "329": {
+            "name": "DueToRelated", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "330": {
+            "name": "BuyVolume", 
+            "type": "QTY"
+        }, 
+        "331": {
+            "name": "SellVolume", 
+            "type": "QTY"
+        }, 
+        "332": {
+            "name": "HighPx", 
+            "type": "PRICE"
+        }, 
+        "333": {
+            "name": "LowPx", 
+            "type": "PRICE"
+        }, 
+        "334": {
+            "name": "Adjustment", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "CANCEL"
+                }, 
+                "2": {
+                    "description": "ERROR"
+                }, 
+                "3": {
+                    "description": "CORRECTION"
+                }
+            }
+        }, 
+        "335": {
+            "name": "TradSesReqID", 
+            "type": "STRING"
+        }, 
+        "336": {
+            "name": "TradingSessionID", 
+            "type": "STRING"
+        }, 
+        "337": {
+            "name": "ContraTrader", 
+            "type": "STRING"
+        }, 
+        "338": {
+            "name": "TradSesMethod", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "ELECTRONIC"
+                }, 
+                "2": {
+                    "description": "OPEN_OUTCRY"
+                }, 
+                "3": {
+                    "description": "TWO_PARTY"
+                }
+            }
+        }, 
+        "339": {
+            "name": "TradSesMode", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "TESTING"
+                }, 
+                "2": {
+                    "description": "SIMULATED"
+                }, 
+                "3": {
+                    "description": "PRODUCTION"
+                }
+            }
+        }, 
+        "340": {
+            "name": "TradSesStatus", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "HALTED"
+                }, 
+                "2": {
+                    "description": "OPEN"
+                }, 
+                "3": {
+                    "description": "CLOSED"
+                }, 
+                "4": {
+                    "description": "PRE_OPEN"
+                }, 
+                "5": {
+                    "description": "PRE_CLOSE"
+                }
+            }
+        }, 
+        "341": {
+            "name": "TradSesStartTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "342": {
+            "name": "TradSesOpenTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "343": {
+            "name": "TradSesPreCloseTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "344": {
+            "name": "TradSesCloseTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "345": {
+            "name": "TradSesEndTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "346": {
+            "name": "NumberOfOrders", 
+            "type": "INT"
+        }, 
+        "347": {
+            "name": "MessageEncoding", 
+            "type": "STRING", 
+            "values": {
+                "EUC-JP": {
+                    "description": "EUC_JP"
+                }, 
+                "ISO-2022-JP": {
+                    "description": "ISO_2022_JP"
+                }, 
+                "SHIFT_JIS": {
+                    "description": "SHIFT_JIS"
+                }, 
+                "UTF-8": {
+                    "description": "UTF_8"
+                }
+            }
+        }, 
+        "348": {
+            "name": "EncodedIssuerLen", 
+            "type": "LENGTH"
+        }, 
+        "349": {
+            "name": "EncodedIssuer", 
+            "type": "DATA"
+        }, 
+        "350": {
+            "name": "EncodedSecurityDescLen", 
+            "type": "LENGTH"
+        }, 
+        "351": {
+            "name": "EncodedSecurityDesc", 
+            "type": "DATA"
+        }, 
+        "352": {
+            "name": "EncodedListExecInstLen", 
+            "type": "LENGTH"
+        }, 
+        "353": {
+            "name": "EncodedListExecInst", 
+            "type": "DATA"
+        }, 
+        "354": {
+            "name": "EncodedTextLen", 
+            "type": "LENGTH"
+        }, 
+        "355": {
+            "name": "EncodedText", 
+            "type": "DATA"
+        }, 
+        "356": {
+            "name": "EncodedSubjectLen", 
+            "type": "LENGTH"
+        }, 
+        "357": {
+            "name": "EncodedSubject", 
+            "type": "DATA"
+        }, 
+        "358": {
+            "name": "EncodedHeadlineLen", 
+            "type": "LENGTH"
+        }, 
+        "359": {
+            "name": "EncodedHeadline", 
+            "type": "DATA"
+        }, 
+        "360": {
+            "name": "EncodedAllocTextLen", 
+            "type": "LENGTH"
+        }, 
+        "361": {
+            "name": "EncodedAllocText", 
+            "type": "DATA"
+        }, 
+        "362": {
+            "name": "EncodedUnderlyingIssuerLen", 
+            "type": "LENGTH"
+        }, 
+        "363": {
+            "name": "EncodedUnderlyingIssuer", 
+            "type": "DATA"
+        }, 
+        "364": {
+            "name": "EncodedUnderlyingSecurityDescLen", 
+            "type": "LENGTH"
+        }, 
+        "365": {
+            "name": "EncodedUnderlyingSecurityDesc", 
+            "type": "DATA"
+        }, 
+        "366": {
+            "name": "AllocPrice", 
+            "type": "PRICE"
+        }, 
+        "367": {
+            "name": "QuoteSetValidUntilTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "368": {
+            "name": "QuoteEntryRejectReason", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "UNKNOWN_SYMBOL"
+                }, 
+                "2": {
+                    "description": "EXCHANGE"
+                }, 
+                "3": {
+                    "description": "QUOTE_EXCEEDS_LIMIT"
+                }, 
+                "4": {
+                    "description": "TOO_LATE_TO_ENTER"
+                }, 
+                "5": {
+                    "description": "UNKNOWN_QUOTE"
+                }, 
+                "6": {
+                    "description": "DUPLICATE_QUOTE"
+                }, 
+                "7": {
+                    "description": "INVALID_BID_ASK_SPREAD"
+                }, 
+                "8": {
+                    "description": "INVALID_PRICE"
+                }, 
+                "9": {
+                    "description": "NOT_AUTHORIZED_TO_QUOTE_SECURITY"
+                }
+            }
+        }, 
+        "369": {
+            "name": "LastMsgSeqNumProcessed", 
+            "type": "INT"
+        }, 
+        "370": {
+            "name": "OnBehalfOfSendingTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "371": {
+            "name": "RefTagID", 
+            "type": "INT"
+        }, 
+        "372": {
+            "name": "RefMsgType", 
+            "type": "STRING"
+        }, 
+        "373": {
+            "name": "SessionRejectReason", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "INVALID_TAG_NUMBER"
+                }, 
+                "1": {
+                    "description": "REQUIRED_TAG_MISSING"
+                }, 
+                "10": {
+                    "description": "SENDINGTIME_ACCURACY_PROBLEM"
+                }, 
+                "11": {
+                    "description": "INVALID_MSGTYPE"
+                }, 
+                "2": {
+                    "description": "TAG_NOT_DEFINED_FOR_THIS_MESSAGE_TYPE"
+                }, 
+                "3": {
+                    "description": "UNDEFINED_TAG"
+                }, 
+                "4": {
+                    "description": "TAG_SPECIFIED_WITHOUT_A_VALUE"
+                }, 
+                "5": {
+                    "description": "VALUE_IS_INCORRECT"
+                }, 
+                "6": {
+                    "description": "INCORRECT_DATA_FORMAT_FOR_VALUE"
+                }, 
+                "7": {
+                    "description": "DECRYPTION_PROBLEM"
+                }, 
+                "8": {
+                    "description": "SIGNATURE_PROBLEM"
+                }, 
+                "9": {
+                    "description": "COMPID_PROBLEM"
+                }
+            }
+        }, 
+        "374": {
+            "name": "BidRequestTransType", 
+            "type": "CHAR", 
+            "values": {
+                "C": {
+                    "description": "CANCEL"
+                }, 
+                "N": {
+                    "description": "NO"
+                }
+            }
+        }, 
+        "375": {
+            "name": "ContraBroker", 
+            "type": "STRING"
+        }, 
+        "376": {
+            "name": "ComplianceID", 
+            "type": "STRING"
+        }, 
+        "377": {
+            "name": "SolicitedFlag", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "378": {
+            "name": "ExecRestatementReason", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "GT_CORPORATE_ACTION"
+                }, 
+                "1": {
+                    "description": "GT_RENEWAL"
+                }, 
+                "2": {
+                    "description": "VERBAL_CHANGE"
+                }, 
+                "3": {
+                    "description": "REPRICING_OF_ORDER"
+                }, 
+                "4": {
+                    "description": "BROKER_OPTION"
+                }, 
+                "5": {
+                    "description": "PARTIAL_DECLINE_OF_ORDERQTY"
+                }
+            }
+        }, 
+        "379": {
+            "name": "BusinessRejectRefID", 
+            "type": "STRING"
+        }, 
+        "380": {
+            "name": "BusinessRejectReason", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "OTHER"
+                }, 
+                "1": {
+                    "description": "UNKOWN_ID"
+                }, 
+                "2": {
+                    "description": "UNKNOWN_SECURITY"
+                }, 
+                "3": {
+                    "description": "UNSUPPORTED_MESSAGE_TYPE"
+                }, 
+                "4": {
+                    "description": "APPLICATION_NOT_AVAILABLE"
+                }, 
+                "5": {
+                    "description": "CONDITIONALLY_REQUIRED_FIELD_MISSING"
+                }
+            }
+        }, 
+        "381": {
+            "name": "GrossTradeAmt", 
+            "type": "AMT"
+        }, 
+        "382": {
+            "name": "NoContraBrokers", 
+            "type": "INT"
+        }, 
+        "383": {
+            "name": "MaxMessageSize", 
+            "type": "INT"
+        }, 
+        "384": {
+            "name": "NoMsgTypes", 
+            "type": "INT"
+        }, 
+        "385": {
+            "name": "MsgDirection", 
+            "type": "CHAR", 
+            "values": {
+                "R": {
+                    "description": "RECEIVE"
+                }, 
+                "S": {
+                    "description": "SEND"
+                }
+            }
+        }, 
+        "386": {
+            "name": "NoTradingSessions", 
+            "type": "INT"
+        }, 
+        "387": {
+            "name": "TotalVolumeTraded", 
+            "type": "QTY"
+        }, 
+        "388": {
+            "name": "DiscretionInst", 
+            "type": "CHAR", 
+            "values": {
+                "0": {
+                    "description": "RELATED_TO_DISPLAYED_PRICE"
+                }, 
+                "1": {
+                    "description": "RELATED_TO_MARKET_PRICE"
+                }, 
+                "2": {
+                    "description": "RELATED_TO_PRIMARY_PRICE"
+                }, 
+                "3": {
+                    "description": "RELATED_TO_LOCAL_PRIMARY_PRICE"
+                }, 
+                "4": {
+                    "description": "RELATED_TO_MIDPOINT_PRICE"
+                }, 
+                "5": {
+                    "description": "RELATED_TO_LAST_TRADE_PRICE"
+                }
+            }
+        }, 
+        "389": {
+            "name": "DiscretionOffset", 
+            "type": "PRICEOFFSET"
+        }, 
+        "390": {
+            "name": "BidID", 
+            "type": "STRING"
+        }, 
+        "391": {
+            "name": "ClientBidID", 
+            "type": "STRING"
+        }, 
+        "392": {
+            "name": "ListName", 
+            "type": "STRING"
+        }, 
+        "393": {
+            "name": "TotalNumSecurities", 
+            "type": "INT"
+        }, 
+        "394": {
+            "name": "BidType", 
+            "type": "INT"
+        }, 
+        "395": {
+            "name": "NumTickets", 
+            "type": "INT"
+        }, 
+        "396": {
+            "name": "SideValue1", 
+            "type": "AMT"
+        }, 
+        "397": {
+            "name": "SideValue2", 
+            "type": "AMT"
+        }, 
+        "398": {
+            "name": "NoBidDescriptors", 
+            "type": "INT"
+        }, 
+        "399": {
+            "name": "BidDescriptorType", 
+            "type": "INT"
+        }, 
+        "400": {
+            "name": "BidDescriptor", 
+            "type": "STRING"
+        }, 
+        "401": {
+            "name": "SideValueInd", 
+            "type": "INT"
+        }, 
+        "402": {
+            "name": "LiquidityPctLow", 
+            "type": "FLOAT"
+        }, 
+        "403": {
+            "name": "LiquidityPctHigh", 
+            "type": "FLOAT"
+        }, 
+        "404": {
+            "name": "LiquidityValue", 
+            "type": "AMT"
+        }, 
+        "405": {
+            "name": "EFPTrackingError", 
+            "type": "FLOAT"
+        }, 
+        "406": {
+            "name": "FairValue", 
+            "type": "AMT"
+        }, 
+        "407": {
+            "name": "OutsideIndexPct", 
+            "type": "FLOAT"
+        }, 
+        "408": {
+            "name": "ValueOfFutures", 
+            "type": "AMT"
+        }, 
+        "409": {
+            "name": "LiquidityIndType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "5_DAY_MOVING_AVERAGE"
+                }, 
+                "2": {
+                    "description": "20_DAY_MOVING_AVERAGE"
+                }, 
+                "3": {
+                    "description": "NORMAL_MARKET_SIZE"
+                }, 
+                "4": {
+                    "description": "OTHER"
+                }
+            }
+        }, 
+        "410": {
+            "name": "WtAverageLiquidity", 
+            "type": "FLOAT"
+        }, 
+        "411": {
+            "name": "ExchangeForPhysical", 
+            "type": "BOOLEAN", 
+            "values": {
+                "N": {
+                    "description": "NO"
+                }, 
+                "Y": {
+                    "description": "YES"
+                }
+            }
+        }, 
+        "412": {
+            "name": "OutMainCntryUIndex", 
+            "type": "AMT"
+        }, 
+        "413": {
+            "name": "CrossPercent", 
+            "type": "FLOAT"
+        }, 
+        "414": {
+            "name": "ProgRptReqs", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "BUYSIDE_EXPLICITLY_REQUESTS_STATUS_USING_STATUSREQUEST"
+                }, 
+                "2": {
+                    "description": "SELLSIDE_PERIODICALLY_SENDS_STATUS_USING_LISTSTATUS_PERIOD_OPTIONALLY_SPECIFIED_IN_PROGRESSPERIOD"
+                }, 
+                "3": {
+                    "description": "REAL_TIME_EXECUTION_REPORTS"
+                }
+            }
+        }, 
+        "415": {
+            "name": "ProgPeriodInterval", 
+            "type": "INT"
+        }, 
+        "416": {
+            "name": "IncTaxInd", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "NET"
+                }, 
+                "2": {
+                    "description": "GROSS"
+                }
+            }
+        }, 
+        "417": {
+            "name": "NumBidders", 
+            "type": "INT"
+        }, 
+        "418": {
+            "name": "TradeType", 
+            "type": "CHAR", 
+            "values": {
+                "A": {
+                    "description": "AGENCY"
+                }, 
+                "G": {
+                    "description": "VWAP_GUARANTEE"
+                }, 
+                "J": {
+                    "description": "GUARANTEED_CLOSE"
+                }, 
+                "R": {
+                    "description": "RISK_TRADE"
+                }
+            }
+        }, 
+        "419": {
+            "name": "BasisPxType", 
+            "type": "CHAR", 
+            "values": {
+                "2": {
+                    "description": "CLOSING_PRICE_AT_MORNING_SESSION"
+                }, 
+                "3": {
+                    "description": "CLOSING_PRICE"
+                }, 
+                "4": {
+                    "description": "CURRENT_PRICE"
+                }, 
+                "5": {
+                    "description": "SQ"
+                }, 
+                "6": {
+                    "description": "VWAP_THROUGH_A_DAY"
+                }, 
+                "7": {
+                    "description": "VWAP_THROUGH_A_MORNING_SESSION"
+                }, 
+                "8": {
+                    "description": "VWAP_THROUGH_AN_AFTERNOON_SESSION"
+                }, 
+                "9": {
+                    "description": "VWAP_THROUGH_A_DAY_EXCEPT_YORI"
+                }, 
+                "A": {
+                    "description": "VWAP_THROUGH_A_MORNING_SESSION_EXCEPT_YORI"
+                }, 
+                "B": {
+                    "description": "VWAP_THROUGH_AN_AFTERNOON_SESSION_EXCEPT_YORI"
+                }, 
+                "C": {
+                    "description": "STRIKE"
+                }, 
+                "D": {
+                    "description": "OPEN"
+                }, 
+                "Z": {
+                    "description": "OTHERS"
+                }
+            }
+        }, 
+        "420": {
+            "name": "NoBidComponents", 
+            "type": "INT"
+        }, 
+        "421": {
+            "name": "Country", 
+            "type": "STRING"
+        }, 
+        "422": {
+            "name": "TotNoStrikes", 
+            "type": "INT"
+        }, 
+        "423": {
+            "name": "PriceType", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "PERCENTAGE"
+                }, 
+                "2": {
+                    "description": "PER_SHARE"
+                }, 
+                "3": {
+                    "description": "FIXED_AMOUNT"
+                }
+            }
+        }, 
+        "424": {
+            "name": "DayOrderQty", 
+            "type": "QTY"
+        }, 
+        "425": {
+            "name": "DayCumQty", 
+            "type": "QTY"
+        }, 
+        "426": {
+            "name": "DayAvgPx", 
+            "type": "PRICE"
+        }, 
+        "427": {
+            "name": "GTBookingInst", 
+            "type": "INT", 
+            "values": {
+                "0": {
+                    "description": "BOOK_OUT_ALL_TRADES_ON_DAY_OF_EXECUTION"
+                }, 
+                "1": {
+                    "description": "ACCUMULATE_EXECUTIONS_UNTIL_ORDER_IS_FILLED_OR_EXPIRES"
+                }, 
+                "2": {
+                    "description": "ACCUMULATE_UNTIL_VERBALLY_NOTIFIED_OTHERWISE"
+                }
+            }
+        }, 
+        "428": {
+            "name": "NoStrikes", 
+            "type": "INT"
+        }, 
+        "429": {
+            "name": "ListStatusType", 
+            "type": "INT"
+        }, 
+        "430": {
+            "name": "NetGrossInd", 
+            "type": "INT", 
+            "values": {
+                "1": {
+                    "description": "NET"
+                }, 
+                "2": {
+                    "description": "GROSS"
+                }
+            }
+        }, 
+        "431": {
+            "name": "ListOrderStatus", 
+            "type": "INT"
+        }, 
+        "432": {
+            "name": "ExpireDate", 
+            "type": "LOCALMKTDATE"
+        }, 
+        "433": {
+            "name": "ListExecInstType", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "IMMEDIATE"
+                }, 
+                "2": {
+                    "description": "WAIT_FOR_EXECUTE_INSTRUCTION"
+                }
+            }
+        }, 
+        "434": {
+            "name": "CxlRejResponseTo", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "ORDER_CANCEL_REQUEST"
+                }, 
+                "2": {
+                    "description": "ORDER_CANCEL_REPLACE_REQUEST"
+                }
+            }
+        }, 
+        "435": {
+            "name": "UnderlyingCouponRate", 
+            "type": "FLOAT"
+        }, 
+        "436": {
+            "name": "UnderlyingContractMultiplier", 
+            "type": "FLOAT"
+        }, 
+        "437": {
+            "name": "ContraTradeQty", 
+            "type": "QTY"
+        }, 
+        "438": {
+            "name": "ContraTradeTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "439": {
+            "name": "ClearingFirm", 
+            "type": "STRING"
+        }, 
+        "440": {
+            "name": "ClearingAccount", 
+            "type": "STRING"
+        }, 
+        "441": {
+            "name": "LiquidityNumSecurities", 
+            "type": "INT"
+        }, 
+        "442": {
+            "name": "MultiLegReportingType", 
+            "type": "CHAR", 
+            "values": {
+                "1": {
+                    "description": "SINGLE_SECURITY"
+                }, 
+                "2": {
+                    "description": "INDIVIDUAL_LEG_OF_A_MULTI_LEG_SECURITY"
+                }, 
+                "3": {
+                    "description": "MULTI_LEG_SECURITY"
+                }
+            }
+        }, 
+        "443": {
+            "name": "StrikeTime", 
+            "type": "UTCTIMESTAMP"
+        }, 
+        "444": {
+            "name": "ListStatusText", 
+            "type": "STRING"
+        }, 
+        "445": {
+            "name": "EncodedListStatusTextLen", 
+            "type": "LENGTH"
+        }, 
+        "446": {
+            "name": "EncodedListStatusText", 
+            "type": "DATA"
+        }
+    }, 
+    "messages": {
+        "0": {
+            "msgcat": "admin", 
+            "name": "Heartbeat"
+        }, 
+        "1": {
+            "msgcat": "admin", 
+            "name": "TestRequest"
+        }, 
+        "2": {
+            "msgcat": "admin", 
+            "name": "ResendRequest"
+        }, 
+        "3": {
+            "msgcat": "admin", 
+            "name": "Reject"
+        }, 
+        "4": {
+            "msgcat": "admin", 
+            "name": "SequenceReset"
+        }, 
+        "5": {
+            "msgcat": "admin", 
+            "name": "Logout"
+        }, 
+        "6": {
+            "msgcat": "app", 
+            "name": "IOI"
+        }, 
+        "7": {
+            "msgcat": "app", 
+            "name": "Advertisement"
+        }, 
+        "8": {
+            "msgcat": "app", 
+            "name": "ExecutionReport"
+        }, 
+        "9": {
+            "msgcat": "app", 
+            "name": "OrderCancelReject"
+        }, 
+        "A": {
+            "msgcat": "admin", 
+            "name": "Logon"
+        }, 
+        "B": {
+            "msgcat": "app", 
+            "name": "News"
+        }, 
+        "C": {
+            "msgcat": "app", 
+            "name": "Email"
+        }, 
+        "D": {
+            "msgcat": "app", 
+            "name": "NewOrderSingle"
+        }, 
+        "E": {
+            "msgcat": "app", 
+            "name": "NewOrderList"
+        }, 
+        "F": {
+            "msgcat": "app", 
+            "name": "OrderCancelRequest"
+        }, 
+        "G": {
+            "msgcat": "app", 
+            "name": "OrderCancelReplaceRequest"
+        }, 
+        "H": {
+            "msgcat": "app", 
+            "name": "OrderStatusRequest"
+        }, 
+        "J": {
+            "msgcat": "app", 
+            "name": "Allocation"
+        }, 
+        "K": {
+            "msgcat": "app", 
+            "name": "ListCancelRequest"
+        }, 
+        "L": {
+            "msgcat": "app", 
+            "name": "ListExecute"
+        }, 
+        "M": {
+            "msgcat": "app", 
+            "name": "ListStatusRequest"
+        }, 
+        "N": {
+            "msgcat": "app", 
+            "name": "ListStatus"
+        }, 
+        "P": {
+            "msgcat": "app", 
+            "name": "AllocationInstructionAck"
+        }, 
+        "Q": {
+            "msgcat": "app", 
+            "name": "DontKnowTrade"
+        }, 
+        "R": {
+            "msgcat": "app", 
+            "name": "QuoteRequest"
+        }, 
+        "S": {
+            "msgcat": "app", 
+            "name": "Quote"
+        }, 
+        "T": {
+            "msgcat": "app", 
+            "name": "SettlementInstructions"
+        }, 
+        "V": {
+            "msgcat": "app", 
+            "name": "MarketDataRequest"
+        }, 
+        "W": {
+            "msgcat": "app", 
+            "name": "MarketDataSnapshotFullRefresh"
+        }, 
+        "X": {
+            "msgcat": "app", 
+            "name": "MarketDataIncrementalRefresh"
+        }, 
+        "Y": {
+            "msgcat": "app", 
+            "name": "MarketDataRequestReject"
+        }, 
+        "Z": {
+            "msgcat": "app", 
+            "name": "QuoteCancel"
+        }, 
+        "a": {
+            "msgcat": "app", 
+            "name": "QuoteStatusRequest"
+        }, 
+        "b": {
+            "msgcat": "app", 
+            "name": "QuoteAcknowledgement"
+        }, 
+        "c": {
+            "msgcat": "app", 
+            "name": "SecurityDefinitionRequest"
+        }, 
+        "d": {
+            "msgcat": "app", 
+            "name": "SecurityDefinition"
+        }, 
+        "e": {
+            "msgcat": "app", 
+            "name": "SecurityStatusRequest"
+        }, 
+        "f": {
+            "msgcat": "app", 
+            "name": "SecurityStatus"
+        }, 
+        "g": {
+            "msgcat": "app", 
+            "name": "TradingSessionStatusRequest"
+        }, 
+        "h": {
+            "msgcat": "app", 
+            "name": "TradingSessionStatus"
+        }, 
+        "i": {
+            "msgcat": "app", 
+            "name": "MassQuote"
+        }, 
+        "j": {
+            "msgcat": "app", 
+            "name": "BusinessMessageReject"
+        }, 
+        "k": {
+            "msgcat": "app", 
+            "name": "BidRequest"
+        }, 
+        "l": {
+            "msgcat": "app", 
+            "name": "BidResponse"
+        }, 
+        "m": {
+            "msgcat": "app", 
+            "name": "ListStrikePrice"
+        }
+    }
+}
