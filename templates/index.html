@@ -2,10 +2,114 @@
 <html style="height:100%;width:100%;">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>FIX LogViewer</title>
+        <title>FIX Parser</title>
         <link rel="stylesheet" href='/static/css/style.css' />
         <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/js/functions.js"></script>
+        <script type="text/javascript" src="/static/js/main.js"></script>
+        <script type="text/javascript">
+            function show_time_line(){
+                // 清空表格tbody
+                $("#header_line_table>tbody").empty();
+                // 读取服务端返回的lines
+                var lines = {{lines|tojson|safe}};
+                var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
+                var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
+                // 追加FIX消息到TimeLine Table
+                for(var i=0; i<lines.length;i++)
+                {
+                    var line = lines[i];
+                    // 是否过滤管理类消息
+                    if(skip_admin_messages_checked)
+                    {
+                        if(line.msgcat == "admin")
+                        {
+                            continue;
+                        }
+                    }
+                    // 是否过滤心跳消息
+                    if(skip_heartbeats_checked)
+                    {
+                        if(line.message == "Heartbeat")
+                        {
+                            continue;
+                        }
+                    }
+                    var tr = `<tr align='center' height='30' class=tr_${i} data-trid=${i}>` + "<td>" + line.time + "</td>" + "<td>" + line.sender + "</td>"
+                    + "<td>" + line.target + "</td>" + "<td>" + line.message + "</td>" + "<td>" + line.client_order_id + "</td>" +
+                    "<td style='word-wrap:break-word;word-break:break-all;'>" + line.details + "</td>" + "</tr>";
+                    $("#header_line_table").append(tr);
+                }
+                // 交替行颜色设置
+                $("tr:odd").addClass("tr_odd");
+                $("tr:even").addClass("tr_even");
+
+            }
+
+            function show_fix_message(row) {
+                // 清空表格tbody
+                $("#fix_message>tbody").empty();
+                var messages = {{messages|tojson|safe}};
+                // 获取第row行的FIX Message
+                var message = messages[row];
+                var fields = message.fields;
+                var isChecked = $('#skip_common_fields').prop('checked');
+                // 追加FIX消息的所有Field到FIX Message Table
+                for(var i=0; i<fields.length;i++)
+                {
+                    var ok = false;
+                    // 是否过滤common类字段
+                    if(isChecked)
+                    {
+                        for(var j = 0; j < message.common_fields.length; j++)
+                        {
+                            if(fields[i].tag_name == message.common_fields[j])
+                            {
+                                ok = true;
+                            }
+                        }
+                    }
+                    if(ok)
+                    {
+                        continue;
+                    }
+                    var tr = "<tr align='center' height='30'>" + "<td>" + fields[i].tag +
+                    "</td>" + "<td>" + fields[i].tag_name + "</td>" + "<td>" + fields[i].value + "</td>" +
+                    "<td style='word-wrap:break-word;word-break:break-all;'>" + fields[i].value_description + "</td>" + "</tr>";
+                    $("#fix_message").append(tr);
+                }
+                // 交替行颜色设置
+                $("tr:odd").addClass("tr_odd");
+                $("tr:even").addClass("tr_even");
+            }
+            // 上传文件处理
+            function handleFileSelect(event) {
+                let reads = new FileReader();
+                let file = document.getElementById('fix_file').files[0];
+                reads.readAsText(file, 'utf-8');
+                // 加载完成时设置input输入框的值
+                reads.onload = function (e) {
+                    document.getElementById('input').value = e.target.result
+                    $('#input_form').submit();
+                };
+                $("#fix_file").val("");
+            }
+            function show_fix_versions(){
+                $('#standard_fix').empty();
+                var standard_fix_list = {{standard_fix_list|tojson|safe}};
+                for(let i = 0; i < standard_fix_list.length; i++)
+                {
+                    var option = $("<option>").val(standard_fix_list[i]).text(standard_fix_list[i]);
+                    $("#standard_fix").append(option);
+                }
+                $('#custom_fix').empty();
+                var custom_fix_list = {{custom_fix_list|tojson|safe}};
+                for(let i = 0; i < custom_fix_list.length; i++)
+                {
+                    var option = $("<option>").val(custom_fix_list[i]).text(custom_fix_list[i]);
+                    $("#custom_fix").append(option);
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -14,25 +118,34 @@
             <div class="input">
                 <b style="color:red;font-size:30px;">Paste FIX messages below.</b>
                 <form id="input_form" name="input_form" method="post">
-                    <textarea id="input" name="input" placeholder="Paste FIX messages or drop files containing FIX text."
-                            type="text" rows="10" style="width: 100%; height: 15%;font-size:16px">
+                    <textarea id="input" name="input" placeholder="Paste FIX messages text below."
+                            type="text" rows="10" style="width: 100%; height: 15%;font-size:16px;background-color:#C7EDCC;">
                     </textarea>
+                    <select id="fix_version_select" name="fix_version_select" form="input_form" onChange='javascript:submit();' style="height:30px;">
+                        <option value="auto" selected="selected">AutoDetect</option>
+                        <optgroup id="standard_fix" label="Standard FIX">
+                        </optgroup>
+                        <optgroup id="custom_fix" label="Custom FIX">
+                        </optgroup>
+                    </select>
                     <button style="height:30px;" id="process" form="input_form" type="submit">Process</button>
                     <button style="height:30px;" id="clear" type = "button">Clear</button>
                     <button style="height:30px;" id="sample_data" type="button">Sample Data</button>
+                    <input type="file" id="fix_file" size="0px" accept="text/plain" onchange="handleFileSelect(event)"  style="display:none"/>
+                    <button style="height:30px;" id="upload_file" type="button" onclick="fix_file.click()">Upload File</button>
                 </form>
                 <p></p>
             </div>
-            <div class="result" style="font-size:20px;">
+            <div class="result">
                 <!--Time Line Table-->
                 <div class="HeaderLine" style="float:left; width:58%;">
                     <table id="header_line_table" class="sansserif" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                        <b>Time Line</b><br>
-                        <input id="skip_admin_messages" type="checkbox" name="skip_admin_messages"/>
-                        <label for="skip_admin_messages" style="height:40px;">Skip Admin Messages</label>
-                        <input id="skip_heart_beats" type="checkbox" name="skip_heart_beats"/>
-                        <label for="skip_heart_beats" style="height:40px;">Skip Heart Beats</label>
-                        <thead height="40">
+                        <b style="font-size:25px;">Time Line</b><br>
+                        <input id="skip_admin_messages" type="checkbox" name="skip_admin_messages" style="font-size:20px;"/>
+                        <label for="skip_admin_messages" style="height:40px;font-size:20px;">Skip Admin Messages</label>
+                        <input id="skip_heart_beats" type="checkbox" name="skip_heart_beats" style="font-size:20px;"/>
+                        <label for="skip_heart_beats" style="height:40px;font-size:20px;">Skip Heart Beats</label>
+                        <thead height="40" style="font-size:20px;">
                             <th>Time</th>
                             <th>Sender</th>
                             <th>Target</th>
@@ -40,54 +153,12 @@
                             <th>Client Order ID</th>
                             <th>Details</th>
                         </thead>
-                        <tbody class="class_tbody">
-<!--                            {% for line in lines %}-->
-<!--                                <tr height="30">-->
-<!--                                    <td align="left">{{ line.time }}</td>-->
-<!--                                    <td align="center">{{line.sender}}</td>-->
-<!--                                    <td align="center">{{line.target}}</td>-->
-<!--                                    <td align="center">{{line.message}}</td>-->
-<!--                                    <td align="center">{{line.client_order_id}}</td>-->
-<!--                                    <td align="center" style="word-wrap:break-word;word-break:break-all;">{{line.details}}</td>-->
-<!--                                </tr>-->
-<!--                            {% endfor %}-->
-                        <script>
-                            function show_time_line(){
-                                $("#header_line_table>tbody").empty();
-                                var lines = {{lines|tojson|safe}};
-                                var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
-                                var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
-                                // 追加FIX消息到TimeLine Table
-                                for(var i=0; i<lines.length;i++)
-                                {
-                                    var line = lines[i];
-                                    if(skip_admin_messages_checked)
-                                    {
-                                        if(line.msgcat == "admin")
-                                        {
-                                            continue;
-                                        }
-                                    }
-                                    if(skip_heartbeats_checked)
-                                    {
-                                        if(line.message == "Heartbeat")
-                                        {
-                                            continue;
-                                        }
-                                    }
-                                    var tr = `<tr align='center' height='30' class=tr_${i} data-trid=${i}>` + "<td>" + line.time + "</td>" + "<td>" + line.sender + "</td>"
-                                    + "<td>" + line.target + "</td>" + "<td>" + line.message + "</td>" + "<td>" + line.client_order_id + "</td>" +
-                                    "<td style='word-wrap:break-word;word-break:break-all;'>" + line.details + "</td>" + "</tr>";
-                                    $("#header_line_table").append(tr);
-                                }
-                                // 交替行颜色设置
-                                $("tr:odd").addClass("tr_odd");
-                                $("tr:even").addClass("tr_even");
-                            }
-                            show_time_line();
-                            // 设置第1行为当前行
-                            $("#header_line_table tr:eq(1)").toggleClass("focus");
-                        </script>
+                        <tbody class="class_tbody" style="font-size:16px;">
+                            <script type="text/javascript">
+                                show_time_line();
+                                // 设置第1行为当前行
+                                $("#header_line_table tr:eq(1)").toggleClass("focus");
+                            </script>
                         </tbody>
                     </table>
                 </div>
@@ -95,61 +166,16 @@
                 <!--FIX Message Table-->
                 <div class="FixMessage" style="float:right; width:40%;">
                     <table id="fix_message" name="fix_message" class="FixMessage" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                        <b>FIX Message Details</b><br>
-                        <label style="height:40px;"><input type="checkbox" id="skip_common_fields" value="" />Skip Common Fields</label>
-                        <thead height="40">
+                        <b style="font-size:25px;">FIX Message Details</b><br>
+                        <label style="height:40px;font-size:20px;"><input type="checkbox" id="skip_common_fields" value="" />Skip Common Fields</label>
+                        <thead height="40" style="font-size:20px;">
                             <th>Tag</th>
                             <th>Tag Description</th>
                             <th>Value</th>
                             <th>Value Description</th>
                         </thead>
-                        <tbody>
-<!--                            {% for message in messages %}-->
-<!--                                {% for field in message.fields %}-->
-<!--                                    <tr align="center" height="30">-->
-<!--                                        <td>{{ field.tag }}</td>-->
-<!--                                        <td>{{field.tag_name}}</td>-->
-<!--                                        <td>{{ field.value }}</td>-->
-<!--                                        <td style="word-wrap:break-word;word-break:break-all;">{{ field.value_description }}</td>-->
-<!--                                    </tr>-->
-<!--                                {% endfor %}-->
-<!--                                {% break %}-->
-<!--                            {% endfor %}-->
+                        <tbody style="font-size:16px;">
                             <script>
-                                function show_fix_message(row) {
-                                    $("#fix_message>tbody").empty();
-                                    var messages = {{messages|tojson|safe}};
-                                    // 获取第row行的FIX Message
-                                    var message = messages[row];
-                                    var fields = message.fields;
-                                    var isChecked = $('#skip_common_fields').prop('checked');
-                                    // 追加FIX消息的所有Field到FIX Message Table
-                                    for(var i=0; i<fields.length;i++)
-                                    {
-                                        var ok = false;
-                                        if(isChecked)
-                                        {
-                                            for(var j = 0; j < message.common_fields.length; j++)
-                                            {
-                                                if(fields[i].tag_name == message.common_fields[j])
-                                                {
-                                                    ok = true;
-                                                }
-                                            }
-                                        }
-                                        if(ok)
-                                        {
-                                            continue;
-                                        }
-                                        var tr = "<tr align='center' height='30'>" + "<td>" + fields[i].tag +
-                                        "</td>" + "<td>" + fields[i].tag_name + "</td>" + "<td>" + fields[i].value + "</td>" +
-                                        "<td style='word-wrap:break-word;word-break:break-all;'>" + fields[i].value_description + "</td>" + "</tr>";
-                                        $("#fix_message").append(tr);
-                                    }
-                                    // 交替行颜色设置
-                                    $("tr:odd").addClass("tr_odd");
-                                    $("tr:even").addClass("tr_even");
-                                }
                                 show_fix_message(0)
                             </script>
                         </tbody>
@@ -162,10 +188,17 @@
     <style type="text/css">
     </style>
     <script type="text/javascript">
-        $(function(){
+        var text = document.getElementById("input").value;
+        $(document).ready(function(){
             $("tr:odd").addClass("tr_odd");
             $("tr:even").addClass("tr_even");
-        });
+            var raw = {{raw|tojson|safe}};
+            document.getElementById("input").value = raw
+            var fix_version = {{fix_version|tojson|safe}};
+            show_fix_versions();
+            $("#fix_version_select").val(fix_version);
+        })
+
         var row = 0;
         const selectEvent = (ele) => {
             let target = event.target
@@ -207,14 +240,13 @@
         });
 
         $('#process').click(function() {
-            var text = document.getElementById("input").value;
-            $('#process').submit();
-            document.getElementById("input").value = text;
-
-        })
+            $('#input_from').submit();
+        });
 
         $("#clear").click(function(){
             document.getElementById("input").value = ""
+            $("#header_line_table>tbody").empty();
+            $("#fix_message>tbody").empty();
         })
 
         var SAMPLE_FIX_MESSAGES = "8=FIX.4.19=6135=A34=149=EXEC52=20121105-23:24:0656=BANZAI98=0108=3010=003\
@@ -232,11 +264,17 @@
             8=FIX.4.19=10435=F34=649=BANZAI52=20121105-23:25:1656=EXEC11=135215791643738=1000041=135215791235754=155=SPY10=198\
             8=FIX.4.19=8235=334=849=EXEC52=20121105-23:25:1656=BANZAI45=658=Unsupported message type10=000\
             8=FIX.4.19=10435=F34=749=BANZAI52=20121105-23:25:2556=EXEC11=135215792530938=1000041=135215791235754=155=SPY10=197\
-            8=FIX.4.19=8235=334=949=EXEC52=20121105-23:25:2556=BANZAI45=758=Unsupported message type10=002";
+            8=FIX.4.19=8235=334=949=EXEC52=20121105-23:25:2556=BANZAI45=758=Unsupported message type10=002\
+            8=FIX.4.19=6135=A49=INVMGR56=BRKR34=152=20000426-12:05:0698=0108=3010=157\
+            8=FIX.4.1,9=61,35=A,49=INVMGR,56=BRKR,34=1,52=20000426-12:05:06,98=0,108=30,10=157,\
+            8=FIX.4.2|9=157|35=V|34=2|49=BRKR|52=20120921-06:41:04.295|56=QUOTE1-T|262=1:TOP:EURUSD|263=1|264=1|265=0|266=Y|146=1|55=EUR/USD|460=4|267=2|269=0|269=1|10=170|\
+            8=FIX.4.3;9=61;35=A;49=BRKR;56=INVMGR;98=0;34=1;52=20000426-12:05:08;108=30;10=143;\
+            8=FIX.4.4^A9=61^A35=A^A49=BRKR^A56=INVMGR^A98=0^A34=1^A52=20000426-12:05:08^A108=30^A10=143^A";
 
         // Sample Data按钮点击事件处理函数
         $("#sample_data").click(function(){
             document.getElementById("input").value = SAMPLE_FIX_MESSAGES;
+            $('#input_form').submit();
         });
     </script>
 </html>

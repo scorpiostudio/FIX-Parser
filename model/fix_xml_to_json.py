@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+# -*- coding:utf-8 -*-
 import json
 import xml.etree.cElementTree as ElementTree
 import os
@@ -32,13 +34,13 @@ def xml_to_json(xml_filename):
 
     fields = root.find("fields")
     for field in fields.findall("field"):
-        print field.get("number"), field.get("name"), field.get("type")
+        # print field.get("number"), field.get("name"), field.get("type")
         field_dict = dict()
         field_dict["name"] = field.get("name")
         field_dict["type"] = field.get("type")
         values = dict()
         for value in field.findall("value"):
-            print "\t", value.get("enum"), value.get("description")
+            # print "\t", value.get("enum"), value.get("description")
             enum_dict = dict()
             enum_dict["description"] = value.get("description")
             values[value.get("enum")] = enum_dict

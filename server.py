@@ -1,54 +1,14 @@
+#!/usr/bin/python2
+# -*- coding:utf-8 -*-
 from flask import Flask, render_template, request
 from model.fix_parser import FIXParser
+from model.fix_xml_to_json import fix_xml_to_json
 import json
+import config
 
 
 app = Flask(__name__)
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
-
-
-def header_lines(lines):
-    result = list()
-    for line in lines:
-        line_dict = dict()
-        fields = line['fields']
-        details = ""
-        msg_type = ""
-        side = ""
-        order_qty = ""
-        symbol = ""
-        text = ""
-        line_dict['client_order_id'] = ""
-        for field in fields:
-            if field['tag'] == '11':
-                line_dict['client_order_id'] = field['value']
-            if field['tag'] == '35':
-                msg_type = field['value']
-                line_dict['message'] = line['message']
-                line_dict['msgcat'] = line['msgcat']
-            if field['tag'] == '38':
-                order_qty = field['value']
-            if field['tag'] == '49':
-                line_dict['sender'] = field['value']
-            if field['tag'] == '52':
-                line_dict['time'] = field['value']
-            if field['tag'] == '54':
-                side = field['value_description']
-            if field['tag'] == '55':
-                symbol = field['value']
-            if field['tag'] == '56':
-                line_dict['target'] = field['value']
-            if field['tag'] == '58':
-                text = field['value']
-        if msg_type == 'D':
-            details = side + " " + order_qty + " " + symbol
-        elif msg_type == 'F':
-            details = side + " " + order_qty + " " + symbol
-        elif msg_type == "3":
-            details = text
-        line_dict['details'] = details
-        result.append(line_dict)
-    return result
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -56,20 +16,23 @@ def header_lines(lines):
 def index():
     if request.method == 'POST':
         text = request.form['input']
+        fix_version = request.form['fix_version_select']
     else:
         text = request.args.get('input')
-    parser = FIXParser()
+        fix_version = request.args.get('fix_version_select')
+    if fix_version is None:
+        fix_version = "auto"
+    parser = FIXParser(config.FIX_DICT_PATH, fix_version)
     messages = parser.parse_fix_message(text)
-    lines = header_lines(messages)
-    print messages
-    result = ""
-    for line in messages:
-        for field in line['fields']:
-            result += field['tag'] + field['tag_name'] + field['value'] + field['value_description']
-        result += "\r\n\r\n"
-    # return result
-    return render_template('index.html', lines=lines, messages=messages)
+    lines = parser.time_lines(messages)
+    return render_template('index.html', standard_fix_list=config.STANDARD_FIX_LIST,
+                           custom_fix_list=config.CUSTOM_FIX_LIST, fix_version=fix_version, lines=lines,
+                           messages=messages, raw=text)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    # 生成JSON格式的FIX字典
+    fix_xml_to_json(config.FIX_DICT_PATH)
+
+    # 启动Server
+    app.run(host=config.HOST, port=config.PORT, debug=True)
