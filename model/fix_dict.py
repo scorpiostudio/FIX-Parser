@@ -28,10 +28,10 @@ def get_fix_dict(dict_path, fix_name):
 
 
 if __name__ == '__main__':
-    print get_fix_dict('FIX_DICT', 'FIX40')
-    print get_fix_dict('FIX_DICT', 'FIX41')
-    print get_fix_dict('FIX_DICT', 'FIX42')
-    print get_fix_dict('FIX_DICT', 'FIX43')
-    print get_fix_dict('FIX_DICT', 'FIX44')
-    print get_fix_dict('FIX_DICT', 'FIX50')
-    print get_fix_dict('FIX_DICT', 'FIXT11')
+    print get_fix_dict('../FIX_DICT', 'FIX40')
+    print get_fix_dict('../FIX_DICT', 'FIX41')
+    print get_fix_dict('../FIX_DICT', 'FIX42')
+    print get_fix_dict('../FIX_DICT', 'FIX43')
+    print get_fix_dict('../FIX_DICT', 'FIX44')
+    print get_fix_dict('../FIX_DICT', 'FIX50')
+    print get_fix_dict('../FIX_DICT', 'FIXT11')

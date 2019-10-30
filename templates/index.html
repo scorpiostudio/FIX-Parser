@@ -1,7 +1,7 @@
 <!doctype html>
 <html style="height:100%;width:100%;">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
         <title>FIX Parser</title>
         <link rel="stylesheet" href='/static/css/style.css' />
         <script type="text/javascript" src="/static/js/jquery.min.js"></script>
@@ -34,8 +34,22 @@
                             continue;
                         }
                     }
+                    message_td = '<td>' + line.message + "</td>"
+                    if(line.msgcat == "admin")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:#CCCCCC">'+ line.message + "</span></td>"
+                    }
+
+                    if(line.message == "Reject")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:red">'+ line.message + "</span></td>"
+                    }
+                    if(line.message == "NewOrderSingle")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:green">'+ line.message + "</span></td>"
+                    }
                     var tr = `<tr align='center' height='30' class=tr_${i} data-trid=${i}>` + "<td>" + line.time + "</td>" + "<td>" + line.sender + "</td>"
-                    + "<td>" + line.target + "</td>" + "<td>" + line.message + "</td>" + "<td>" + line.client_order_id + "</td>" +
+                    + "<td>" + line.target + "</td>" + message_td + "<td>" + line.client_order_id + "</td>" +
                     "<td style='word-wrap:break-word;word-break:break-all;'>" + line.details + "</td>" + "</tr>";
                     $("#header_line_table").append(tr);
                 }
@@ -57,6 +71,7 @@
                 for(var i=0; i<fields.length;i++)
                 {
                     var ok = false;
+
                     // 是否过滤common类字段
                     if(isChecked)
                     {
@@ -68,12 +83,22 @@
                             }
                         }
                     }
+
                     if(ok)
                     {
                         continue;
                     }
+                    var tag_name = "<td>" + fields[i].tag_name + "</td>";
+                    for(var j = 0; j < message.common_fields.length; j++)
+                    {
+                        if(fields[i].tag_name == message.common_fields[j])
+                        {
+                            tag_name = '<td><span style="background-color:#CCCCCC">' + fields[i].tag_name + "</span></td>";
+
+                        }
+                    }
                     var tr = "<tr align='center' height='30'>" + "<td>" + fields[i].tag +
-                    "</td>" + "<td>" + fields[i].tag_name + "</td>" + "<td>" + fields[i].value + "</td>" +
+                    "</td>" + tag_name + "<td>" + fields[i].value + "</td>" +
                     "<td style='word-wrap:break-word;word-break:break-all;'>" + fields[i].value_description + "</td>" + "</tr>";
                     $("#fix_message").append(tr);
                 }
@@ -93,6 +118,7 @@
                 };
                 $("#fix_file").val("");
             }
+            // 显示FIX协议版本选择
             function show_fix_versions(){
                 $('#standard_fix').empty();
                 var standard_fix_list = {{standard_fix_list|tojson|safe}};
@@ -145,7 +171,7 @@
                         <label for="skip_admin_messages" style="height:40px;font-size:20px;">Skip Admin Messages</label>
                         <input id="skip_heart_beats" type="checkbox" name="skip_heart_beats" style="font-size:20px;"/>
                         <label for="skip_heart_beats" style="height:40px;font-size:20px;">Skip Heart Beats</label>
-                        <thead height="40" style="font-size:20px;">
+                        <thead height="40px" style="font-size:20px;">
                             <th>Time</th>
                             <th>Sender</th>
                             <th>Target</th>
@@ -168,7 +194,7 @@
                     <table id="fix_message" name="fix_message" class="FixMessage" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                         <b style="font-size:25px;">FIX Message Details</b><br>
                         <label style="height:40px;font-size:20px;"><input type="checkbox" id="skip_common_fields" value="" />Skip Common Fields</label>
-                        <thead height="40" style="font-size:20px;">
+                        <thead height="40px" style="font-size:20px;">
                             <th>Tag</th>
                             <th>Tag Description</th>
                             <th>Value</th>
@@ -209,16 +235,31 @@
             let focusEle = $(target).parent().find("tr.focus")
             focusEle.toggleClass("focus");
             focusEle.unbind('click')
+            let trId = target.dataset.trid
+            let ele = $(`.tr_${trId}`)
+            ele.click(selectEvent(event))
+
+            ele.toggleClass("focus");
+            row = trId
+            show_fix_message(row);
+        })
+
+        function click_span(){
+            let target = event.target.parentElement.parentElement
+            let focusEle = $(target).parent().find("tr.focus")
+            focusEle.toggleClass("focus");
+            focusEle.unbind('click')
 
             let trId = target.dataset.trid
             let ele = $(`.tr_${trId}`)
             ele.click(selectEvent(event))
 
             ele.toggleClass("focus");
-
             row = trId
             show_fix_message(row);
-        })
+            // 阻止事件向上传播
+            event.stopPropagation();
+        }
 
         // 点击Time Line表格的skip_admin_messages复选框
         $("#skip_admin_messages").click(function() {

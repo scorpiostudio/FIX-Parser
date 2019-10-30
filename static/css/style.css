@@ -33,13 +33,21 @@ p.sansserif{
 
 .tr_odd
 {
-    background: #336666;
+    background: #FFFFF0;
 }
 .tr_even
 {
-    background: #996633;
+    background: #99CCFF;
 }
 tr.focus{
     background-color:Orange;
+}
+
+table{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    font-family: "Times New Roman", Times, serif;
+    border-radius: 10px;
 }
 

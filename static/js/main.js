@@ -34,6 +34,7 @@
             }
 
             function show_fix_message(row) {
+                // 清空表格tbody
                 $("#fix_message>tbody").empty();
                 var messages = {{messages|tojson|safe}};
                 // 获取第row行的FIX Message
@@ -44,22 +45,26 @@
                 for(var i=0; i<fields.length;i++)
                 {
                     var ok = false;
+                    var tag_name = "<td>" + fields[i].tag_name + "</td>";
+                    // 是否过滤common类字段
                     if(isChecked)
                     {
                         for(var j = 0; j < message.common_fields.length; j++)
                         {
                             if(fields[i].tag_name == message.common_fields[j])
                             {
+                                tag_name = '<td><font color="green">' + fields[i].tag_name + "</font></td>";
                                 ok = true;
                             }
                         }
                     }
+
                     if(ok)
                     {
                         continue;
                     }
                     var tr = "<tr align='center' height='30'>" + "<td>" + fields[i].tag +
-                    "</td>" + "<td>" + fields[i].tag_name + "</td>" + "<td>" + fields[i].value + "</td>" +
+                    "</td>" + tag_name + "<td>" + fields[i].value + "</td>" +
                     "<td style='word-wrap:break-word;word-break:break-all;'>" + fields[i].value_description + "</td>" + "</tr>";
                     $("#fix_message").append(tr);
                 }
