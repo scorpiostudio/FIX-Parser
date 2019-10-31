@@ -17,16 +17,11 @@ try:
     STANDARD_FIX_LIST = [item.strip(" ") for item in STANDARD_FIX_LIST]
     CUSTOM_FIX_LIST = str(config.get('fix', 'CUSTOM_FIX')).split(",")
     CUSTOM_FIX_LIST = [item.strip(" ") for item in CUSTOM_FIX_LIST]
-    # DELIMITER_PATTERN = r'[ ;.|?,\x01]+?'
     DELIMITER_PATTERN = r'[;|?,\x01]+?'
     MESSAGE_PATTERN = r'8=FIX.\d.\d{}9=\d+{}35=\w{}.+?10=\d\d\d{}|8=FIX.\d.\d\^A9=\d+\^A35=\w\^A.+?10=\d\d\d\^A'\
         .format(DELIMITER_PATTERN, DELIMITER_PATTERN, DELIMITER_PATTERN, DELIMITER_PATTERN)
     FIELD_PATTERN = r'\d+=.+?{}|\d+=.+?\^A'.format(DELIMITER_PATTERN)
 
-    # LOG_LEVEL = config.get("common", 'LOG_LEVEL')
-    # LOG_PATH = config.get('common', 'LOG_PATH')
-    # log = logger.Logger(LOG_PATH, level=LOG_LEVEL)
-    # log.logger.info("load config success.")
 except NoSectionError as e:
     print("{} NoSection: {}".format(CONFIG_FILE, e))
 except NoOptionError as e:

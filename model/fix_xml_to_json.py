@@ -6,23 +6,31 @@ import os
 
 
 def xml_to_json(xml_filename):
+    """
+    xml格式的FIX消息文本转json格式
+    :param xml_filename:FIX字典名称
+    :return:返回JSON字典
+    """
     fix_dict = dict()
+    # 获取xml解析对象
     xml_parser = ElementTree.parse(xml_filename)
+    # 获取root节点
     root = xml_parser.getroot()
     fields_dict = dict()
     messages_dict = dict()
 
+    # 获取common_fields
     common_fields = list()
     headers = root.find("header")
     for header in headers.findall('field'):
         common_fields.append(header.get('name'))
-
     trailers = root.find("trailer")
     for trailer in trailers.findall('field'):
         common_fields.append(trailer.get('name'))
 
     fix_dict['common_fields'] = common_fields
 
+    # 获取messages
     messages = root.find("messages")
     for message in messages.findall("message"):
         message_dict = dict()
@@ -32,6 +40,7 @@ def xml_to_json(xml_filename):
 
     fix_dict['messages'] = messages_dict
 
+    # 获取fields
     fields = root.find("fields")
     for field in fields.findall("field"):
         # print field.get("number"), field.get("name"), field.get("type")
@@ -54,6 +63,11 @@ def xml_to_json(xml_filename):
 
 
 def fix_xml_to_json(xml_path):
+    """
+    遍历FIX字典目录，生成JSON字典
+    :param xml_path:
+    :return:
+    """
     files = os.listdir(xml_path)
     for name in files:
         if name.endswith(".xml"):

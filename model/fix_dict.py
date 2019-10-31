@@ -3,12 +3,14 @@
 import json
 import os
 
-"""
-FIX数据字典定义
-"""
-
 
 def get_fix_dict(dict_path, fix_name):
+    """
+    获取FIX字典
+    :param dict_path: FIX字典目录
+    :param fix_name: FIX字典名称
+    :return: 返回FIX字典
+    """
     if fix_name == "FIX40":
         return json.load(open(os.path.join(dict_path, "FIX40.json"), "r"))
     elif fix_name == "FIX41":
