@@ -44,6 +44,8 @@ class FIXParser(object):
         result = list()
         for line in lines:
             line_dict = dict()
+            line_dict['fields'] = line['fields']
+            line_dict['raw'] = line['raw']
             fields = line['fields']
             details = ""
             msg_type = ""
@@ -108,7 +110,7 @@ class FIXParser(object):
                 break
             # 匹配对象的结束索引
             index = match.span()[1]
-            lines.append(text[0:index])
+            lines.append(str(text[0:index]).strip(" ") + '\n')
             # 更新FIX消息文本，进行下一次匹配
             text = text[index:]
         return lines

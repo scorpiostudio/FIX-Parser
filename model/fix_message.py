@@ -61,7 +61,7 @@ class FIXMessage(object):
         # 消息类型对应的msgcat
         message_dict["msgcat"] = msgcat
         # FIX消息对应的FIX字典的common_fields
-        message_dict["common_fields"] = self.fix_dict['common_fields']
+        # message_dict["common_fields"] = self.fix_dict['common_fields']
         return message_dict
 
     def _split_fix_message(self):
@@ -92,6 +92,10 @@ class FIXMessage(object):
         if tag in self.fix_dict['fields']:
             # 获取tag_name
             result['tag_name'] = self.fix_dict['fields'][tag]['name']
+            if result['tag_name'] in self.fix_dict['common_fields']:
+                result['is_common_field'] = 'True'
+            else:
+                result['is_common_field'] = 'False'
             # 如果存在values
             if 'values' in self.fix_dict['fields'][tag]:
                 if value in self.fix_dict['fields'][tag]['values']:

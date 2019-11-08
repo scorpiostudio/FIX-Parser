@@ -29,8 +29,7 @@ def index():
     messages = parser.parse_fix_message(text)
     lines = parser.time_lines(messages)
     return render_template('index.html', standard_fix_list=config.STANDARD_FIX_LIST,
-                           custom_fix_list=config.CUSTOM_FIX_LIST, fix_version=fix_version, lines=lines,
-                           messages=messages, raw=text)
+                           custom_fix_list=config.CUSTOM_FIX_LIST, fix_version=fix_version, messages=lines)
 
 
 if __name__ == '__main__':
