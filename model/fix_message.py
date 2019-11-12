@@ -4,28 +4,30 @@ import fix_dict
 import re
 import config
 
+FIX_MESSAGE_PATTERN = re.compile(r'8=FIX.(\d).(\d)')
+
 
 class FIXMessage(object):
     """
     FIX消息类
     """
-    def __init__(self, raw, dict_path, fix_dict_name):
+    def __init__(self, raw, fix_dict_name):
         """
         FIXMessage构造函数
         :param raw: FIX消息原始数据
-        :param dict_path: FIX字典目录
         :param fix_dict_name: FIX字典名称
         """
         self.raw = raw
         # 选择AutoDetect时，根据FIX消息选择FIX协议字典
         if fix_dict_name == "auto":
             # FIX protocol version
-            pattern = re.compile(r'8=FIX.(\d).(\d)')
+            pattern = FIX_MESSAGE_PATTERN
             match = pattern.search(self.raw)
             dict_name = "FIX" + match.groups()[0] + match.groups()[1]
-            self.fix_dict = fix_dict.get_fix_dict(dict_path, dict_name)
+            # dict_name = 'FIX' + self.raw[6] + self.raw[8]
+            self.fix_dict = fix_dict.get_fix_dict(dict_name)
         else:
-            self.fix_dict = fix_dict.get_fix_dict(dict_path, fix_dict_name)
+            self.fix_dict = fix_dict.get_fix_dict(fix_dict_name)
 
     def parse(self):
         """
@@ -55,13 +57,10 @@ class FIXMessage(object):
         message_dict["fields"] = fields
         # FIX消息原始数据
         message_dict["raw"] = self.raw
-        # message_dict["messages"] = self.fix_dict['messages']
         # 消息类型对应的message信息
         message_dict["message"] = message
         # 消息类型对应的msgcat
         message_dict["msgcat"] = msgcat
-        # FIX消息对应的FIX字典的common_fields
-        # message_dict["common_fields"] = self.fix_dict['common_fields']
         return message_dict
 
     def _split_fix_message(self):

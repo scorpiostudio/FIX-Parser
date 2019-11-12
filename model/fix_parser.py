@@ -3,46 +3,34 @@
 import re
 from fix_message import FIXMessage
 import config
+import datetime, time
+
+FIX_PARSER_PATTERN = re.compile(config.MESSAGE_PATTERN)
 
 
 class FIXParser(object):
     """
     FIX消息文本解析器
     """
-    def __init__(self, dict_path, fix_dict_name):
+    def __init__(self, fix_dict_name):
         """
         FIXParser构造函数
-        :param dict_path: FIX字典目录
         :param fix_dict_name: FIX协议名称
         """
         # FIX消息匹配的正则表达式对象
-        self.pattern = re.compile(config.MESSAGE_PATTERN)
-        self.dict_path = dict_path
+        self.pattern = FIX_PARSER_PATTERN
         self.fix_dict_name = fix_dict_name
 
-    def parse_fix_message(self, fix_text):
+    def parse_fix_message(self, fix_text_list):
         """
         FIX消息文本解析方法
-        :param fix_text: FIX消息文本字符串
+        :param fix_text_list: FIX消息文本字符串
         :return: 返回解析后的FIX消息链表
         """
-        messages = self._split_fix_text(fix_text)
+        messages = self.split_fix_text(fix_text_list)
         lines = list()
         for raw_message in messages:
-            fix_message = FIXMessage(raw_message, self.dict_path, self.fix_dict_name).parse()
-            lines.append(fix_message)
-
-        return lines
-
-    @staticmethod
-    def time_lines(lines):
-        """
-        提取生成Time Line表格数据
-        :param lines:
-        :return:
-        """
-        result = list()
-        for line in lines:
+            line = FIXMessage(raw_message, self.fix_dict_name).parse()
             line_dict = dict()
             line_dict['fields'] = line['fields']
             line_dict['raw'] = line['raw']
@@ -58,28 +46,28 @@ class FIXParser(object):
                 # client_order_id
                 if field['tag'] == '11':
                     line_dict['client_order_id'] = field['value']
-                if field['tag'] == '35':
+                elif field['tag'] == '35':
                     msg_type = field['value']
                     # message
                     line_dict['message'] = line['message']
                     # msgcat为admin或app，用于Admin条件过滤
                     line_dict['msgcat'] = line['msgcat']
-                if field['tag'] == '38':
+                elif field['tag'] == '38':
                     order_qty = field['value']
                 # sender
-                if field['tag'] == '49':
+                elif field['tag'] == '49':
                     line_dict['sender'] = field['value']
                 # time
-                if field['tag'] == '52':
+                elif field['tag'] == '52':
                     line_dict['time'] = field['value']
-                if field['tag'] == '54':
+                elif field['tag'] == '54':
                     side = field['value_description']
-                if field['tag'] == '55':
+                elif field['tag'] == '55':
                     symbol = field['value']
                 # target
-                if field['tag'] == '56':
+                elif field['tag'] == '56':
                     line_dict['target'] = field['value']
-                if field['tag'] == '58':
+                elif field['tag'] == '58':
                     text = field['value']
             # details生成
             if msg_type == 'D':
@@ -89,30 +77,47 @@ class FIXParser(object):
             elif msg_type == "3":
                 details = text
             line_dict['details'] = details
-            result.append(line_dict)
-        return result
+            lines.append(line_dict)
 
-    def _split_fix_text(self, fix_text):
+        return lines
+
+    def split_fix_text(self, fix_text_list):
         """
         FIX消息文本分割方法
-        :param fix_text:
+        :param fix_text_list:
         :return:返回分割后的FIX消息链表
         """
+        before = datetime.datetime.now()
         lines = list()
-        text = fix_text
-        if text is None:
+        if fix_text_list is None:
             return lines
-        while True:
-            # 匹配第一条FIX消息
-            match = self.pattern.search(text)
-            # 没有匹配，退出
-            if match is None:
-                break
-            # 匹配对象的结束索引
-            index = match.span()[1]
-            lines.append(str(text[0:index]).strip(" ") + '\n')
-            # 更新FIX消息文本，进行下一次匹配
-            text = text[index:]
+        other_text = ''
+        for text in fix_text_list:
+            # print 'raw'
+            # print text
+            text = other_text + text
+            # print 'concat '
+            # print text
+            n = 0
+            while 1:
+                # 匹配第一条FIX消息
+                match = self.pattern.search(text)
+                # 没有匹配，退出
+                if match is None:
+                    other_text = text
+                    # print 'other_text'
+                    # print other_text
+                    break
+                # 匹配对象的结束索引
+                index = match.span()[1]
+                n = index
+                lines.append(str(text[0:index]).strip(" "))
+                # 更新FIX消息文本，进行下一次匹配
+                text = text[index:]
+
+            # time.sleep(5)
+        after = datetime.datetime.now()
+        print 'split ', after - before
         return lines
 
 

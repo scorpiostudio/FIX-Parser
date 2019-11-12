@@ -3,9 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
         <title>FIX Parser</title>
-        <link rel="stylesheet" href='/static/css/style.css' />
-        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/js/main.js"></script>
+        <link rel="stylesheet" href='/static/style.css' />
+        <script type="text/javascript" src="/static/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/main.js"></script>
         <script type="text/javascript">
             function show_time_line(){
                 // 清空表格tbody
@@ -19,7 +19,7 @@
                 for(var i=0; i<lines.length;i++)
                 {
                     var line = lines[i];
-                    text += line.raw
+                    text = text + line.raw + '\n'
                     // 是否过滤管理类消息
                     if(skip_admin_messages_checked)
                     {
@@ -148,6 +148,9 @@
                     <input type="file" id="fix_file" size="0px" accept="text/plain" onchange="handleFileSelect(event)"  style="display:none"/>
                     <button style="height:30px;" id="upload_file" type="button" onclick="fix_file.click()">Upload File</button>
                 </form>
+                {{ dropzone.load_css() }}
+                {{ dropzone.load_js() }}
+                {{ dropzone.create(action='/upload') }}
                 <p></p>
             </div>
             <div class="result">
