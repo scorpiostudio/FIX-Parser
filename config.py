@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import os
 from ConfigParser import ConfigParser, NoOptionError, NoSectionError
+import logger
 
 config = ConfigParser()
 WORK_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -13,6 +14,8 @@ try:
     HOST = config.get('common', 'HOST')
     PORT = config.getint('common', 'PORT')
     NUMBER_PER_PAGE = config.getint('common', 'NUMBER_PER_PAGE')
+    LOG_LEVEL = config.get("common", 'LOG_LEVEL').strip(" ")
+    LOG_PATH = WORK_DIR + "/" + config.get('common', 'LOG_PATH').strip(" ")
 
     FIX_DICT_PATH = os.path.join(WORK_DIR, config.get("fix", 'FIX_DICT_PATH'))
     STANDARD_FIX_LIST = str(config.get('fix', 'STANDARD_FIX')).split(",")
@@ -24,6 +27,7 @@ try:
         .format(DELIMITER_PATTERN, DELIMITER_PATTERN, DELIMITER_PATTERN, DELIMITER_PATTERN)
     FIELD_PATTERN = r'\d+=.+?{}|\d+=.+?\^A'.format(DELIMITER_PATTERN)
 
+    log = logger.Logger(LOG_PATH, level=LOG_LEVEL)
 except NoSectionError as e:
     print("{} NoSection: {}".format(CONFIG_FILE, e))
 except NoOptionError as e:

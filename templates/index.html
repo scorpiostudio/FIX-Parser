@@ -6,11 +6,10 @@
         <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
         <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
         <script type="text/javascript">
-            function show_time_line(){
+            function show_time_line(lines){
                 // 清空表格tbody
-                $("#header_line_table>tbody").empty();
+                $("#header_line_table_tbody").empty();
                 // 读取服务端返回的lines
-                var lines = {{messages|tojson|safe}};
                 var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
                 var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
                 var text = ''
@@ -59,12 +58,13 @@
                 // 交替行颜色设置
                 $("tr:odd").addClass("tr_odd");
                 $("tr:even").addClass("tr_even");
+                // 设置第1行为当前行
+                $("#header_line_table tr:eq(1)").toggleClass("focus");
             }
 
-            function show_fix_message(row) {
+            function show_fix_message(row, messages) {
                 // 清空表格tbody
                 $("#fix_message>tbody").empty();
-                var messages = {{messages|tojson|safe}};
                 // 获取第row行的FIX Message
                 var message = messages[row];
                 var fields = message.fields;
@@ -97,16 +97,14 @@
             }
 
             // 显示FIX协议版本选择
-            function show_fix_versions(){
+            function show_fix_versions(standard_fix_list, custom_fix_list){
                 $('#standard_fix').empty();
-                var standard_fix_list = {{standard_fix_list|tojson|safe}};
                 for(let i = 0; i < standard_fix_list.length; i++)
                 {
                     var option = $("<option>").val(standard_fix_list[i]).text(standard_fix_list[i]);
                     $("#standard_fix").append(option);
                 }
                 $('#custom_fix').empty();
-                var custom_fix_list = {{custom_fix_list|tojson|safe}};
                 for(let i = 0; i < custom_fix_list.length; i++)
                 {
                     var option = $("<option>").val(custom_fix_list[i]).text(custom_fix_list[i]);
@@ -116,6 +114,7 @@
         </script>
     </head>
     <body>
+<!--        <script type="text/javascript" src="{{ url_for('static',filename='js/fix_parse.js') }}"></script>-->
         <div class="left"></div>
         <div class="main">
             <div class="input">
@@ -136,6 +135,7 @@
                     <button style="height:30px;" id="sample_data" type="button">Sample Data</button>
                     <input type="file" id="fix_file" name="file" accept="text/plain" style="height:30px;display:none;"/>
                     <button style="height:30px;" id="select_file" type="button" onclick="fix_file.click()">Select File</button>
+                    <input id="fix_file_show" name="fix_file_show" readonly='true' placeholder="upload file" style="height:25px;"/>
                     <button style="height:30px;" id="upload_file" type="button">Upload and Parse</button>
                     <p></p>
                 </form>
@@ -160,11 +160,9 @@
                                 <th>Details</th>
                             </tr>
                         </thead>
-                        <tbody class="class_tbody" style="font-size:16px;">
+                        <tbody class="class_tbody" id="header_line_table_tbody" style="font-size:16px;">
                             <script type="text/javascript">
-                                show_time_line();
-                                // 设置第1行为当前行
-                                $("#header_line_table tr:eq(1)").toggleClass("focus");
+                                show_time_line({{messages|tojson|safe}});
                             </script>
                         </tbody>
                     </table>
@@ -185,7 +183,7 @@
                         </thead>
                         <tbody style="font-size:16px;">
                             <script>
-                                show_fix_message(0)
+                                show_fix_message(0, {{messages|tojson|safe}})
                             </script>
                         </tbody>
                     </table>
@@ -202,9 +200,8 @@
                 })
             $("tr:odd").addClass("tr_odd");
             $("tr:even").addClass("tr_even");
-            var fix_version = {{fix_version|tojson|safe}};
-            show_fix_versions();
-            $("#fix_version_select").val(fix_version);
+            show_fix_versions({{standard_fix_list|tojson|safe}}, {{custom_fix_list|tojson|safe}});
+            $("#fix_version_select").val({{fix_version|tojson|safe}});
         })
 
         $("#upload_file").click(function () {
@@ -224,10 +221,7 @@
                 processData: false,
                 cache: false,
                 success: function (msg) {
-                    window.location.href="{{ url_for("query") }}";
-                    show_time_line();
-                    // 设置第1行为当前行
-                    $("#header_line_table tr:eq(1)").toggleClass("focus");
+                    window.location.href="{{ url_for('query') }}";
                 }
             });
         })
@@ -248,7 +242,7 @@
 
             ele.toggleClass("focus");
             row = trId
-            show_fix_message(row);
+            show_fix_message(row, {{messages|tojson|safe}});
         })
 
         function click_span(){
@@ -263,28 +257,28 @@
 
             ele.toggleClass("focus");
             row = trId
-            show_fix_message(row);
+            show_fix_message(row, {{messages|tojson|safe}});
             // 阻止事件向上传播
             event.stopPropagation();
         }
 
         // 点击Time Line表格的skip_admin_messages复选框
         $("#skip_admin_messages").click(function() {
-            show_time_line();
+            show_time_line({{messages|tojson|safe}});
             $("#header_line_table tr:eq(1)").toggleClass("focus");
-            show_fix_message(0);
+            show_fix_message(0, {{messages|tojson|safe}});
         });
 
         // 点击Time Line表格的skip_heart_beats复选框
         $("#skip_heart_beats").change(function() {
-            show_time_line();
+            show_time_line({{messages|tojson|safe}});
             $("#header_line_table tr:eq(1)").toggleClass("focus");
-            show_fix_message(0);
+            show_fix_message(0, {{messages|tojson|safe}});
         });
 
         // 点击FIX Message表格的skipCommonFields复选框
         $("#skip_common_fields").change(function() {
-            show_fix_message(row);
+            show_fix_message(row, {{messages|tojson|safe}});
         });
 
         $('#parse_fix').click(function() {
@@ -295,6 +289,10 @@
             document.getElementById("input").value = ""
             $("#header_line_table>tbody").empty();
             $("#fix_message>tbody").empty();
+        })
+
+        $('#fix_file').change(function(){
+            document.getElementById('fix_file_show').value = document.getElementById('fix_file').files[0].name;
         })
 
         var SAMPLE_FIX_MESSAGES = "8=FIX.4.19=6135=A34=149=EXEC52=20121105-23:24:0656=BANZAI98=0108=3010=003\

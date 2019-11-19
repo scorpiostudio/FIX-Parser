@@ -3,6 +3,7 @@
 import re
 from fix_message import FIXMessage
 import config
+import datetime
 
 FIX_PARSER_PATTERN = re.compile(config.MESSAGE_PATTERN)
 
@@ -26,7 +27,10 @@ class FIXParser(object):
         :param fix_text_list: FIX消息文本字符串
         :return: 返回解析后的FIX消息链表
         """
+        before = datetime.datetime.now()
         messages = self.split_fix_text(fix_text_list)
+        after = datetime.datetime.now()
+        config.log.logger.info('split elapsed time: {}'.format(after - before))
         lines = list()
         for raw_message in messages:
             line = FIXMessage(raw_message, self.fix_dict_name).parse()
@@ -92,7 +96,6 @@ class FIXParser(object):
         other_text = ''
         for text in fix_text_list:
             text = other_text + text
-            n = 0
             while 1:
                 # 匹配第一条FIX消息
                 match = self.pattern.search(text)

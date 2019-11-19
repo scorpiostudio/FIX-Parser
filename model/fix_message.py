@@ -17,8 +17,8 @@ class FIXMessage(object):
         :param raw: FIX消息原始数据
         :param fix_dict_name: FIX字典名称
         """
-        if raw[0] == '\n':
-            raw = raw[1:]
+        # 删除换行符
+        raw = raw.replace('\n', '').replace('\r', '')
         self.raw = raw
         # 选择AutoDetect时，根据FIX消息选择FIX协议字典
         if fix_dict_name == "auto":

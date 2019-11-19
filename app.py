@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
 from datetime import timedelta
 
-basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__, static_url_path='')
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.config['DEBUG'] = True

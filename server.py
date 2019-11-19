@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 # -*- coding:utf-8 -*-
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request
 from model.fix_parser import FIXParser
 from model.fix_xml_to_json import fix_xml_to_json
 import json
@@ -33,6 +33,7 @@ def paginate_query(page, per_page):
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
+    config.log.logger.info('an new connection from {}'.format(request.remote_addr))
     text_list = list()
     if request.method == 'POST':
         # FIX协议版本
@@ -40,6 +41,7 @@ def index():
         # 上传文件
         f = request.files['file']
         filename = secure_filename(f.filename)
+        config.log.logger.info('upload filename: {}'.format(filename))
         while True:
             text = f.read(1024)
             if len(text) > 0:
@@ -59,10 +61,14 @@ def index():
 
     if fix_version is None:
         fix_version = "auto"
-    print 'fix_version ', fix_version
+    config.log.logger.info('fix version: {}'.format(fix_version))
+    before = datetime.datetime.now()
     parser = FIXParser(fix_version)
     lines = parser.parse_fix_message(text_list)
+    after = datetime.datetime.now()
+    config.log.logger.info('parse elapsed time: {}'.format(after - before))
     try:
+        before = datetime.datetime.now()
         # 删除表messages的所有记录
         sql = "DELETE FROM messages;"
         # sql = "DROP TABLE IF EXISTS messages;"
@@ -79,8 +85,10 @@ def index():
                 # 将数据库会话中的变动提交到数据库中,如果不Commit,数据库中是没有改动的
                 db.session.commit()
         db.session.commit()
+        after = datetime.datetime.now()
+        config.log.logger.info('sqlite save elapsed time: {}'.format(after - before))
     except Exception as err:
-        print err
+        config.log.logger.error(err)
         db.session.rollback()
     pagination, messages = paginate_query(1, config.NUMBER_PER_PAGE)
     return render_template('index.html', standard_fix_list=config.STANDARD_FIX_LIST, pagination=pagination,
@@ -105,4 +113,4 @@ if __name__ == '__main__':
     # 创建数据库及表messages
     db.create_all()
     # 启动Server
-    app.run(host=config.HOST, port=config.PORT, debug=True)
+    app.run(host=config.HOST, port=config.PORT, debug=False)

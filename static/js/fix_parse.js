@@ -1,6 +1,6 @@
-            function show_time_line(messages){
+            function show_time_line(lines){
                 // 清空表格tbody
-                $("#header_line_table>tbody").empty();
+                $("#header_line_table_tbody").empty();
                 // 读取服务端返回的lines
                 var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
                 var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
@@ -50,6 +50,8 @@
                 // 交替行颜色设置
                 $("tr:odd").addClass("tr_odd");
                 $("tr:even").addClass("tr_even");
+                // 设置第1行为当前行
+                $("#header_line_table tr:eq(1)").toggleClass("focus");
             }
 
             function show_fix_message(row, messages) {
