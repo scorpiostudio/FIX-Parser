@@ -1,0 +1,222 @@
+<!doctype html>
+<html style="height:100%;width:100%;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+        <title>FIX Parser</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+        <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+        <script type="text/javascript">
+            function show_time_line(){
+                // 清空表格tbody
+                $("#header_line_table>tbody").empty();
+                var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
+                var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
+                // 读取服务端返回的lines
+                var lines = {{messages|tojson|safe}};
+                var text = ''
+                // 追加FIX消息到TimeLine Table
+                for(var i=0; i<lines.length;i++)
+                {
+                    var line = lines[i];
+                    text = text + line.raw + '\n'
+                    // 是否过滤管理类消息
+                    if(skip_admin_messages_checked)
+                    {
+                        if(line.msgcat == "admin")
+                        {
+                            continue;
+                        }
+                    }
+                    // 是否过滤心跳消息
+                    if(skip_heartbeats_checked)
+                    {
+                        if(line.message == "Heartbeat")
+                        {
+                            continue;
+                        }
+                    }
+                    id_td = '<td>' + line.id + "</td>"
+                    message_td = '<td>' + line.message + "</td>"
+                    if(line.msgcat == "admin")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:#CCCCCC">'+ line.message + "</span></td>"
+                    }
+                    if(line.message == "Reject")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:red">'+ line.message + "</span></td>"
+                    }
+                    if(line.message == "NewOrderSingle")
+                    {
+                        message_td = '<td><span class="Time_Line_Span"  onclick="click_span()" style="background:green">'+ line.message + "</span></td>"
+                    }
+                    var tr = `<tr align='center' height='30' class=tr_${i} data-trid=${i}>` + id_td + "<td>" + line.time + "</td>" + "<td>" + line.sender + "</td>"
+                    + "<td>" + line.target + "</td>" + message_td + "<td>" + line.client_order_id + "</td>" +
+                    "<td style='word-wrap:break-word;word-break:break-all;'>" + line.details + "</td>" + "</tr>";
+                    $("#header_line_table").append(tr);
+                }
+                // 交替行颜色设置
+                $("tr:odd").addClass("tr_odd");
+                $("tr:even").addClass("tr_even");
+            }
+            function show_fix_message(row) {
+                // 清空表格tbody
+                $("#fix_message>tbody").empty();
+                var messages = {{messages|tojson|safe}};
+                // 获取第row行的FIX Message
+                var message = messages[row];
+                var fields = message.fields;
+                var isChecked = $('#skip_common_fields').prop('checked');
+                // 追加FIX消息的所有Field到FIX Message Table
+                for(var i=0; i<fields.length;i++)
+                {
+                    // 是否过滤common类字段
+                    var field = fields[i]
+                    if(isChecked)
+                    {
+                        if(field[3] == 'True')
+                        {
+                           continue;
+                        }
+                    }
+                    var tag_name = "<td>" + field[2] + "</td>";
+                    if(field[3] == 'True')
+                    {
+                        tag_name = '<td><span style="background-color:#CCCCCC">' + field[2] + "</span></td>";
+                    }
+                    var tr = "<tr align='center' height='30'>" + "<td>" + field[0] +
+                    "</td>" + tag_name + "<td>" + field[1] + "</td>" +
+                    "<td style='word-wrap:break-word;word-break:break-all;'>" + field[4] + "</td>" + "</tr>";
+                    $("#fix_message").append(tr);
+                }
+                // 交替行颜色设置
+                $("tr:odd").addClass("tr_odd");
+                $("tr:even").addClass("tr_even");
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="left"></div>
+        <div class="main">
+            <div class="result">
+                <div style="background:#C7EDCC;">
+                    {% import 'page_helper.html' as helper %}
+                    {{ helper.render_page_data(pagination, 'query_page') }}
+                </div>
+
+                <!--Time Line Table-->
+                <div class="HeaderLine" style="float:left; width:50%;">
+                    <table id="header_line_table" class="sansserif" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                        <b style="font-size:25px;">Time Line</b><br>
+                        <input id="skip_admin_messages" type="checkbox" name="skip_admin_messages" style="font-size:20px;"/>
+                        <label for="skip_admin_messages" style="height:40px;font-size:20px;">Skip Admin Messages</label>
+                        <input id="skip_heart_beats" type="checkbox" name="skip_heart_beats" style="font-size:20px;"/>
+                        <label for="skip_heart_beats" style="height:40px;font-size:20px;">Skip Heart Beats</label>
+                        <thead height="40px" style="font-size:20px;">
+                            <th>ID</th>
+                            <th>Time</th>
+                            <th>Sender</th>
+                            <th>Target</th>
+                            <th>Message</th>
+                            <th>Client Order ID</th>
+                            <th>Details</th>
+                        </thead>
+                        <tbody class="class_tbody" style="font-size:16px;">
+                            <script type="text/javascript">
+                                show_time_line();
+                                // 设置第1行为当前行
+                                $("#header_line_table tr:eq(1)").toggleClass("focus");
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="" style="width:2%;"></div>
+                <!--FIX Message Table-->
+                <div class="FixMessage" style="float:right; width:48%;">
+                    <table id="fix_message" name="fix_message" class="FixMessage" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                        <b style="font-size:25px;">FIX Message Details</b><br>
+                        <label style="height:40px;font-size:20px;"><input type="checkbox" id="skip_common_fields" value="" />Skip Common Fields</label>
+                        <thead height="40px" style="font-size:20px;">
+                            <th>Tag</th>
+                            <th>Tag Description</th>
+                            <th>Value</th>
+                            <th>Value Description</th>
+                        </thead>
+                        <tbody style="font-size:16px;">
+                            <script type="text/javascript">
+                                show_fix_message(0);
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="right"></div>
+    </body>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $("tr:odd").addClass("tr_odd");
+            $("tr:even").addClass("tr_even");
+        })
+
+        var row = 0;
+        const selectEvent = (ele) => {
+            let target = event.target
+        }
+
+        $('.class_tbody').click(() => {
+            let target = event.target.parentElement
+            let focusEle = $(target).parent().find("tr.focus")
+            focusEle.toggleClass("focus");
+            focusEle.unbind('click')
+            let trId = target.dataset.trid
+            let ele = $(`.tr_${trId}`)
+            ele.click(selectEvent(event))
+
+            ele.toggleClass("focus");
+            row = trId
+            show_fix_message(row);
+        })
+
+        function click_span(){
+            let target = event.target.parentElement.parentElement
+            let focusEle = $(target).parent().find("tr.focus")
+            focusEle.toggleClass("focus");
+            focusEle.unbind('click')
+
+            let trId = target.dataset.trid
+            let ele = $(`.tr_${trId}`)
+            ele.click(selectEvent(event))
+
+            ele.toggleClass("focus");
+            row = trId
+            show_fix_message(row);
+            // 阻止事件向上传播
+            event.stopPropagation();
+        }
+
+        // 点击Time Line表格的skip_admin_messages复选框
+        $("#skip_admin_messages").click(function() {
+            show_time_line();
+            $("#header_line_table tr:eq(1)").toggleClass("focus");
+            show_fix_message(0);
+        });
+
+        // 点击Time Line表格的skip_heart_beats复选框
+        $("#skip_heart_beats").change(function() {
+            show_time_line();
+            $("#header_line_table tr:eq(1)").toggleClass("focus");
+            show_fix_message(0);
+        });
+
+        // 点击FIX Message表格的skipCommonFields复选框
+        $("#skip_common_fields").change(function() {
+            show_fix_message(row);
+        });
+
+    </script>
+</html>
+

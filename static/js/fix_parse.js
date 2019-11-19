@@ -1,16 +1,7 @@
-<!doctype html>
-<html style="height:100%;width:100%;">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
-        <title>FIX Parser</title>
-        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
-        <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
-        <script type="text/javascript">
-            function show_time_line(){
+            function show_time_line(messages){
                 // 清空表格tbody
                 $("#header_line_table>tbody").empty();
                 // 读取服务端返回的lines
-                var lines = {{messages|tojson|safe}};
                 var skip_admin_messages_checked = $('#skip_admin_messages').prop('checked');
                 var skip_heartbeats_checked = $('#skip_heart_beats').prop('checked');
                 var text = ''
@@ -61,10 +52,9 @@
                 $("tr:even").addClass("tr_even");
             }
 
-            function show_fix_message(row) {
+            function show_fix_message(row, messages) {
                 // 清空表格tbody
                 $("#fix_message>tbody").empty();
-                var messages = {{messages|tojson|safe}};
                 // 获取第row行的FIX Message
                 var message = messages[row];
                 var fields = message.fields;
@@ -97,115 +87,32 @@
             }
 
             // 显示FIX协议版本选择
-            function show_fix_versions(){
+            function show_fix_versions(standard_fix_list, custom_fix_list){
                 $('#standard_fix').empty();
-                var standard_fix_list = {{standard_fix_list|tojson|safe}};
                 for(let i = 0; i < standard_fix_list.length; i++)
                 {
                     var option = $("<option>").val(standard_fix_list[i]).text(standard_fix_list[i]);
                     $("#standard_fix").append(option);
                 }
                 $('#custom_fix').empty();
-                var custom_fix_list = {{custom_fix_list|tojson|safe}};
                 for(let i = 0; i < custom_fix_list.length; i++)
                 {
                     var option = $("<option>").val(custom_fix_list[i]).text(custom_fix_list[i]);
                     $("#custom_fix").append(option);
                 }
             }
-        </script>
-    </head>
-    <body>
-        <div class="left"></div>
-        <div class="main">
-            <div class="input">
-                <b style="color:red;font-size:30px;">Paste FIX messages below.</b>
-                <form id="input_form" enctype="multipart/form-data" >
-                    <textarea id="input" name="input" form="input_form" placeholder="Paste FIX messages text below."
-                        type="text" rows="10" style="width: 100%; height: 15%;font-size:16px;background-color:#C7EDCC;">
-                    </textarea>
-                    <select id="fix_version_select" name="fix_version_select" form="input_form" onChange='javascript:submit();' style="height:30px;">
-                        <option value="auto" selected="selected">AutoDetect</option>
-                        <optgroup id="standard_fix" label="Standard FIX">
-                        </optgroup>
-                        <optgroup id="custom_fix" label="Custom FIX">
-                        </optgroup>
-                    </select>
-                    <button style="height:30px;" id="parse_fix" type="submit">Parse</button>
-                    <button style="height:30px;" id="clear" type = "button">Clear</button>
-                    <button style="height:30px;" id="sample_data" type="button">Sample Data</button>
-                    <input type="file" id="fix_file" name="file" accept="text/plain" style="height:30px;display:none;"/>
-                    <button style="height:30px;" id="select_file" type="button" onclick="fix_file.click()">Select File</button>
-                    <button style="height:30px;" id="upload_file" type="button">Upload and Parse</button>
-                    <p></p>
-                </form>
-            </div>
-            <div class="result">
-                <!--Time Line Table-->
-                <div class="HeaderLine" style="float:left; width:58%;">
-                    <b style="font-size:25px;">Time Line</b><br>
-                    <input id="skip_admin_messages" type="checkbox" name="skip_admin_messages" style="font-size:20px;"/>
-                    <label for="skip_admin_messages" style="height:40px;font-size:20px;">Skip Admin Messages</label>
-                    <input id="skip_heart_beats" type="checkbox" name="skip_heart_beats" style="font-size:20px;"/>
-                    <label for="skip_heart_beats" style="height:40px;font-size:20px;">Skip Heart Beats</label>
-                    <table id="header_line_table" class="sansserif" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                        <thead height="40px" style="font-size:20px;">
-                            <tr>
-                                <th>ID</th>
-                                <th>Time</th>
-                                <th>Sender</th>
-                                <th>Target</th>
-                                <th>Message</th>
-                                <th>Client Order ID</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody class="class_tbody" style="font-size:16px;">
-                            <script type="text/javascript">
-                                show_time_line();
-                                // 设置第1行为当前行
-                                $("#header_line_table tr:eq(1)").toggleClass("focus");
-                            </script>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="" style="width:2%;"></div>
-                <!--FIX Message Table-->
-                <div class="FixMessage" style="float:right; width:40%;">
-                    <b style="font-size:25px;">FIX Message Details</b><br>
-                    <label style="height:40px;font-size:20px;"><input type="checkbox" id="skip_common_fields" value="" />Skip Common Fields</label>
-                    <table id="fix_message" name="fix_message" class="FixMessage" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                        <thead height="40px" style="font-size:20px;">
-                            <tr>
-                                <th>Tag</th>
-                                <th>Tag Description</th>
-                                <th>Value</th>
-                                <th>Value Description</th>
-                            </tr>
-                        </thead>
-                        <tbody style="font-size:16px;">
-                            <script>
-                                show_fix_message(0)
-                            </script>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="right"></div>
-    </body>
-    <script type="text/javascript">
+
         var files = [];
-        $(document).ready(function(){
-            $('#fix_file').change(function () {
-                    files = this.files;
-                })
-            $("tr:odd").addClass("tr_odd");
-            $("tr:even").addClass("tr_even");
-            var fix_version = {{fix_version|tojson|safe}};
-            show_fix_versions();
-            $("#fix_version_select").val(fix_version);
-        })
+//        $(document).ready(function(){
+//            $('#fix_file').change(function () {
+//                    files = this.files;
+//                })
+//            $("tr:odd").addClass("tr_odd");
+//            $("tr:even").addClass("tr_even");
+//            var fix_version = {{ fix_version|tojson|safe }};
+//            show_fix_versions();
+//            $("#fix_version_select").val(fix_version);
+//        })
 
         $("#upload_file").click(function () {
             var form_data = new FormData($('#input_form')[0]);
@@ -224,7 +131,7 @@
                 processData: false,
                 cache: false,
                 success: function (msg) {
-                    window.location.href="{{ url_for("query") }}";
+                    window.location.href="{{ url_for('query') }}";
                     show_time_line();
                     // 设置第1行为当前行
                     $("#header_line_table tr:eq(1)").toggleClass("focus");
@@ -324,7 +231,3 @@
             document.getElementById("input").value = SAMPLE_FIX_MESSAGES;
             $('#input_form').submit();
         });
-    </script>
-</html>
-
-

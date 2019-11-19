@@ -3,7 +3,8 @@ import os
 from ConfigParser import ConfigParser, NoOptionError, NoSectionError
 
 config = ConfigParser()
-CONFIG_FILE = 'config.ini'
+WORK_DIR = os.path.abspath(os.path.dirname(__file__))
+CONFIG_FILE = os.path.join(WORK_DIR, 'config.ini')
 if not os.path.exists(CONFIG_FILE):
     print("file {} is not exists.".format(CONFIG_FILE))
 else:
@@ -11,8 +12,9 @@ else:
 try:
     HOST = config.get('common', 'HOST')
     PORT = config.getint('common', 'PORT')
+    NUMBER_PER_PAGE = config.getint('common', 'NUMBER_PER_PAGE')
 
-    FIX_DICT_PATH = config.get("fix", 'FIX_DICT_PATH')
+    FIX_DICT_PATH = os.path.join(WORK_DIR, config.get("fix", 'FIX_DICT_PATH'))
     STANDARD_FIX_LIST = str(config.get('fix', 'STANDARD_FIX')).split(",")
     STANDARD_FIX_LIST = [item.strip(" ") for item in STANDARD_FIX_LIST]
     CUSTOM_FIX_LIST = str(config.get('fix', 'CUSTOM_FIX')).split(",")

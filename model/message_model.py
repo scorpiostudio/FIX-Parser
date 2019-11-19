@@ -13,7 +13,7 @@ class Message(db.Model):
     details = db.Column(db.String)
     msgcat = db.Column(db.String)
     raw = db.Column(db.String(512))
-    fields = db.Column(db.String(5120))
+    fields = db.Column(db.String(3000))
 
     def __init__(self, time, sender, target, message, client_order_id, details, msgcat, raw, fields):
         self.time = time

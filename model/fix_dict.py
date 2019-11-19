@@ -36,9 +36,9 @@ def get_fix_dict(fix_name):
         return FIX50_DICT
     elif fix_name == "FIXT11":
         return FIXT11_DICT
-    elif fix_name == "CCIC_FIX42_DICT":
+    elif fix_name == "CICC_FIX42":
         return CICC_FIX42_DICT
-    elif fix_name == "UBS_FIX42_DICT":
+    elif fix_name == "UBS_FIX42":
         return UBS_FIX42_DICT
 
 
@@ -50,3 +50,5 @@ if __name__ == '__main__':
     print get_fix_dict('FIX44')
     print get_fix_dict('FIX50')
     print get_fix_dict('FIXT11')
+    print get_fix_dict('CICC_FIX42')
+    print get_fix_dict('UBS_FIX42')

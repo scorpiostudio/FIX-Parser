@@ -3,7 +3,6 @@
 import re
 from fix_message import FIXMessage
 import config
-import datetime, time
 
 FIX_PARSER_PATTERN = re.compile(config.MESSAGE_PATTERN)
 
@@ -44,31 +43,31 @@ class FIXParser(object):
             line_dict['client_order_id'] = ""
             for field in fields:
                 # client_order_id
-                if field['tag'] == '11':
-                    line_dict['client_order_id'] = field['value']
-                elif field['tag'] == '35':
-                    msg_type = field['value']
+                if field[0] == '11':
+                    line_dict['client_order_id'] = field[1]
+                elif field[0] == '35':
+                    msg_type = field[1]
                     # message
                     line_dict['message'] = line['message']
                     # msgcat为admin或app，用于Admin条件过滤
                     line_dict['msgcat'] = line['msgcat']
-                elif field['tag'] == '38':
-                    order_qty = field['value']
+                elif field[0] == '38':
+                    order_qty = field[1]
                 # sender
-                elif field['tag'] == '49':
-                    line_dict['sender'] = field['value']
+                elif field[0] == '49':
+                    line_dict['sender'] = field[1]
                 # time
-                elif field['tag'] == '52':
-                    line_dict['time'] = field['value']
-                elif field['tag'] == '54':
-                    side = field['value_description']
-                elif field['tag'] == '55':
-                    symbol = field['value']
+                elif field[0] == '52':
+                    line_dict['time'] = field[1]
+                elif field[0] == '54':
+                    side = field[4]
+                elif field[0] == '55':
+                    symbol = field[1]
                 # target
-                elif field['tag'] == '56':
-                    line_dict['target'] = field['value']
-                elif field['tag'] == '58':
-                    text = field['value']
+                elif field[0] == '56':
+                    line_dict['target'] = field[1]
+                elif field[0] == '58':
+                    text = field[1]
             # details生成
             if msg_type == 'D':
                 details = side + " " + order_qty + " " + symbol
@@ -87,17 +86,12 @@ class FIXParser(object):
         :param fix_text_list:
         :return:返回分割后的FIX消息链表
         """
-        before = datetime.datetime.now()
         lines = list()
         if fix_text_list is None:
             return lines
         other_text = ''
         for text in fix_text_list:
-            # print 'raw'
-            # print text
             text = other_text + text
-            # print 'concat '
-            # print text
             n = 0
             while 1:
                 # 匹配第一条FIX消息
@@ -105,19 +99,12 @@ class FIXParser(object):
                 # 没有匹配，退出
                 if match is None:
                     other_text = text
-                    # print 'other_text'
-                    # print other_text
                     break
                 # 匹配对象的结束索引
                 index = match.span()[1]
-                n = index
                 lines.append(str(text[0:index]).strip(" "))
                 # 更新FIX消息文本，进行下一次匹配
                 text = text[index:]
-
-            # time.sleep(5)
-        after = datetime.datetime.now()
-        print 'split ', after - before
         return lines
 
 
