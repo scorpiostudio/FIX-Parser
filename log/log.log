@@ -1,0 +1,569 @@
+
+2019-11-19 14:17:31,865 - E:\FIXParser\server.py[line:62] - INFO: fix version: auto
+2019-11-19 14:17:31,868 - E:\FIXParser\server.py[line:67] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 14:17:31,874 - E:\FIXParser\server.py[line:87] - INFO: sqlite save elapsed time: 0:00:00.006000
+2019-11-19 14:17:56,157 - E:\FIXParser\server.py[line:62] - INFO: fix version: UBS_FIX42
+2019-11-19 14:17:56,160 - E:\FIXParser\server.py[line:67] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 14:17:56,164 - E:\FIXParser\server.py[line:87] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 14:18:04,369 - E:\FIXParser\server.py[line:62] - INFO: fix version: UBS_FIX42
+2019-11-19 14:18:13,523 - E:\FIXParser\server.py[line:67] - INFO: parse elapsed time: 0:00:09.154000
+2019-11-19 14:18:21,125 - E:\FIXParser\server.py[line:87] - INFO: sqlite save elapsed time: 0:00:07.601000
+2019-11-19 14:21:21,921 - E:\FIXParser\server.py[line:62] - INFO: fix version: auto
+2019-11-19 14:21:21,921 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:21:21,921 - E:\FIXParser\server.py[line:67] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:21:21,921 - E:\FIXParser\server.py[line:87] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:21:28,375 - E:\FIXParser\server.py[line:62] - INFO: fix version: auto
+2019-11-19 14:21:28,575 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.199000
+2019-11-19 14:21:37,611 - E:\FIXParser\server.py[line:67] - INFO: parse elapsed time: 0:00:09.235000
+2019-11-19 14:21:45,196 - E:\FIXParser\server.py[line:87] - INFO: sqlite save elapsed time: 0:00:07.585000
+2019-11-19 14:24:06,911 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:24:06,911 - E:\FIXParser\server.py[line:63] - INFO: fix version: auto
+2019-11-19 14:24:06,911 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:24:06,911 - E:\FIXParser\server.py[line:68] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:24:06,911 - E:\FIXParser\server.py[line:88] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:24:33,798 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 192.168.96.74
+2019-11-19 14:24:33,798 - E:\FIXParser\server.py[line:63] - INFO: fix version: auto
+2019-11-19 14:24:33,798 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:24:33,798 - E:\FIXParser\server.py[line:68] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:24:33,799 - E:\FIXParser\server.py[line:88] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:26:12,338 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 192.168.96.74
+2019-11-19 14:26:12,338 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:26:12,338 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:26:12,339 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 14:26:12,342 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.003000
+2019-11-19 14:26:19,862 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 192.168.96.74
+2019-11-19 14:26:20,214 - E:\FIXParser\server.py[line:44] - INFO: upload filename: messagedb1.txt
+2019-11-19 14:26:20,249 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:26:20,447 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.199000
+2019-11-19 14:26:29,525 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:09.276000
+2019-11-19 14:26:37,108 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:07.583000
+2019-11-19 14:30:55,617 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:30:55,617 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:30:55,617 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:30:55,618 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 14:30:55,637 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.018000
+2019-11-19 14:38:31,278 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:38:31,278 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:38:31,278 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:38:31,278 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:38:31,279 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:38:43,490 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:38:43,490 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:38:43,490 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:38:43,490 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:38:43,490 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:38:47,127 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:38:47,127 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:38:47,128 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:38:47,128 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:38:47,128 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:39:52,177 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:39:52,178 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:39:52,178 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:39:52,178 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:39:52,180 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:40:36,897 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:40:36,897 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:40:36,897 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:40:36,897 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:40:36,898 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:40:38,822 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:40:38,822 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:40:38,823 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:40:38,823 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:40:38,823 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:40:57,778 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:40:57,778 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:40:57,778 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:40:57,778 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:40:57,779 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:40:59,674 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:40:59,674 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:40:59,674 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:40:59,674 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:40:59,676 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:07,430 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:07,430 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:07,430 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:07,430 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:07,431 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:18,726 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:18,726 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:18,726 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:18,726 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:18,726 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:41:20,440 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:20,440 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:20,440 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:20,440 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:20,440 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:30,207 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:30,207 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:30,207 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:30,207 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:30,209 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:31,982 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:31,982 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:31,982 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:31,982 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:31,983 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:34,137 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:34,137 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:34,137 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:34,137 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:34,138 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:36,030 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:36,030 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:36,030 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:36,030 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:36,032 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:41:42,417 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:41:42,417 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:41:42,417 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:41:42,417 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:41:42,418 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:43:23,710 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:43:23,710 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:43:23,710 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:43:23,711 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 14:43:23,711 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:43:34,625 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:43:34,625 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:43:34,625 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:43:34,625 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:43:34,625 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:46:03,505 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:46:03,506 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:46:03,506 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:46:03,506 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:46:03,506 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:46:21,296 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:46:21,296 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:46:21,298 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:46:21,298 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 14:46:21,298 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:46:24,660 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:46:24,660 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:46:24,661 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:46:24,661 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:46:24,661 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:47:02,427 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:47:02,427 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:47:02,427 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:47:02,427 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:47:02,427 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:47:16,805 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:47:16,805 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:47:16,805 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:47:16,805 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:47:16,805 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:47:23,496 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:47:23,497 - E:\FIXParser\server.py[line:44] - INFO: upload filename: fix.txt
+2019-11-19 14:47:23,497 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:47:23,497 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:47:23,505 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.006000
+2019-11-19 14:47:23,510 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.006000
+2019-11-19 14:51:39,733 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:51:39,733 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:51:39,733 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:51:39,733 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:51:39,734 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:51:42,121 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:51:42,121 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:51:42,122 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:51:42,125 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 14:51:42,128 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 14:52:18,776 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:52:18,776 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:52:18,778 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:52:18,778 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:52:18,778 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:56:08,052 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:56:08,052 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:56:08,052 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:56:08,052 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:56:08,052 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 14:58:06,819 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:58:06,819 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:58:06,819 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:58:06,819 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:58:06,821 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:58:24,802 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:58:24,802 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:58:24,802 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:58:24,802 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:58:24,803 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:58:27,551 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:58:27,551 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:58:27,551 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:58:27,551 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:58:27,552 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 14:59:38,678 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 14:59:38,678 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 14:59:38,678 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 14:59:38,678 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 14:59:38,680 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:00:48,480 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:00:48,480 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:00:48,480 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:00:48,480 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:00:48,480 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:01:13,321 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:01:13,321 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:01:13,321 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:01:13,321 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:01:13,322 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:02:39,549 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:02:39,549 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:02:39,549 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:02:39,549 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:02:39,551 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:03:07,520 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:03:07,520 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:03:07,520 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:03:07,520 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:03:07,522 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:03:56,625 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:03:56,625 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:03:56,625 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:03:56,625 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:03:56,625 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:04:30,464 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:04:30,464 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:04:30,464 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:04:30,466 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 15:04:30,466 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:06:32,334 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:06:32,335 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:06:32,335 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:06:32,335 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:06:32,335 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:06:50,117 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:06:50,118 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:06:50,118 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:06:50,118 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:06:50,118 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:07:14,025 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:07:14,026 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:07:14,026 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:07:14,026 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:07:14,026 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:09:49,433 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:09:49,434 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:09:49,434 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:09:49,434 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:09:49,434 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:10:10,835 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:10:10,835 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:10:10,835 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:10:10,835 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:10:10,835 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:12:01,171 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:12:01,171 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:12:01,171 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:12:01,171 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:12:01,171 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:12:27,861 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:12:27,861 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:12:27,861 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:12:27,861 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:12:27,862 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:14:01,078 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:14:01,078 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:14:01,078 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:14:01,078 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:14:01,079 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:14:29,443 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:14:29,443 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:14:29,443 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:14:29,443 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:14:29,444 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:16:10,724 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:16:10,724 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:16:10,724 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:16:10,724 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:16:10,726 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.002000
+2019-11-19 15:16:45,000 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:16:45,002 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:16:45,002 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:16:45,002 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:16:45,003 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:17:03,887 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:17:03,887 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:17:03,887 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:17:03,887 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:17:03,888 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:17:15,065 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:17:15,907 - E:\FIXParser\server.py[line:44] - INFO: upload filename: messagedb1.txt
+2019-11-19 15:17:15,946 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:17:16,144 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.199000
+2019-11-19 15:17:25,385 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:09.440000
+2019-11-19 15:17:33,036 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:07.651000
+2019-11-19 15:17:42,084 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:17:42,084 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:17:42,084 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:17:42,084 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:17:42,094 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.010000
+2019-11-19 15:18:21,588 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:18:21,588 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:18:21,588 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:18:21,588 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:18:21,588 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:18:23,177 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:18:23,177 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:18:23,177 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:18:23,177 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:18:23,178 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:18:33,676 - E:\FIXParser\server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:18:33,676 - E:\FIXParser\server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:18:33,676 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:18:33,676 - E:\FIXParser\server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:18:33,677 - E:\FIXParser\server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:21:16,351 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:21:16,351 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:21:16,351 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:21:16,351 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:21:16,352 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:28:49,063 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:28:49,065 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:28:49,065 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:28:49,066 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:28:49,072 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.006000
+2019-11-19 15:28:50,471 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:28:50,471 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:28:50,471 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:28:50,473 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:28:50,479 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:29:02,730 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:29:02,730 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:29:02,730 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:29:02,732 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 15:29:02,733 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:30:24,411 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:30:24,411 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:30:24,413 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.001000
+2019-11-19 15:30:24,418 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.007000
+2019-11-19 15:30:24,424 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:30:27,960 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:30:27,960 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:30:27,960 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:30:27,964 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.005000
+2019-11-19 15:30:27,969 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:30:28,848 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:30:28,848 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:30:28,848 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:30:28,851 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 15:30:28,857 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:32:05,371 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:32:05,371 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:32:05,371 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:32:05,374 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:32:05,378 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:32:06,782 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:32:06,782 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:32:06,782 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:32:06,786 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 15:32:06,790 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:34:14,569 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:34:14,569 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:34:14,569 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:34:14,572 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:34:14,578 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.006000
+2019-11-19 15:34:16,716 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:34:16,716 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:34:16,717 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:34:16,717 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 15:34:16,723 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:34:17,506 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:34:17,506 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:34:17,506 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.001000
+2019-11-19 15:34:17,509 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:34:17,513 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:29,993 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:29,993 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:29,993 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:29,993 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:37:29,993 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 15:37:31,637 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:31,637 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:31,637 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:31,640 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 15:37:31,644 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:37:32,892 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:32,892 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:32,894 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:32,895 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:32,900 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:34,240 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:34,240 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:34,242 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:34,243 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:34,247 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:35,042 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:35,043 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:35,043 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:35,046 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:35,049 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:35,688 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:35,688 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:35,688 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:35,690 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:35,696 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:37:36,411 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:36,411 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:36,411 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:36,413 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:36,417 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:37:38,255 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:38,256 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:38,256 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:38,257 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:38,262 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:38,908 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:38,910 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:38,910 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:38,911 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:38,915 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:37:39,641 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:39,641 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:39,642 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.001000
+2019-11-19 15:37:39,644 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:39,648 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:37:40,369 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:37:40,371 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:37:40,371 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:37:40,372 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:37:40,377 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:38:25,127 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:25,127 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:25,128 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.001000
+2019-11-19 15:38:25,128 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:38:25,134 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:38:27,651 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:27,651 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:27,651 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:27,653 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 15:38:27,657 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:38:28,398 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:28,398 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:28,398 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:28,400 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:38:28,404 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:38:28,927 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:28,927 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:28,927 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:28,928 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:38:28,933 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:38:29,388 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:29,388 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:29,388 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:29,391 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:38:29,394 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:38:29,811 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:29,812 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:29,812 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:29,813 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:38:29,818 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:38:30,240 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:38:30,240 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:38:30,240 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:38:30,243 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.003000
+2019-11-19 15:38:30,247 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:41:02,737 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:41:02,739 - E:/FIXParser/server.py[line:44] - INFO: upload filename: fix.txt
+2019-11-19 15:41:02,740 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:41:02,740 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:41:02,746 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.006000
+2019-11-19 15:41:02,752 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.006000
+2019-11-19 15:41:04,851 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:41:04,851 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:41:04,851 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:41:04,854 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:41:04,858 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:42:07,940 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:42:07,941 - E:/FIXParser/server.py[line:44] - INFO: upload filename: fix.txt
+2019-11-19 15:42:07,941 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:42:07,941 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:42:07,944 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:42:07,948 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:46:11,448 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:11,450 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:11,450 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:11,450 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:46:11,450 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:46:14,263 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:14,263 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:14,263 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:14,263 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 15:46:14,265 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.001000
+2019-11-19 15:46:15,997 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:15,999 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:15,999 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:16,000 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:16,005 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:46:17,101 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:17,102 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:17,102 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:17,105 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:17,108 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:46:17,630 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:17,631 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:17,631 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:17,632 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:17,638 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:46:18,062 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:18,062 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:18,062 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:18,065 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:18,069 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:46:18,434 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:18,434 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:18,434 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:18,437 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:18,440 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.004000
+2019-11-19 15:46:18,944 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:18,944 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:18,944 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:18,946 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.001000
+2019-11-19 15:46:18,950 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:46:19,799 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:19,801 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:19,801 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:19,802 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:19,808 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:46:23,713 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:23,713 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:23,713 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:23,716 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:23,720 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 15:46:26,288 - E:/FIXParser/server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 15:46:26,288 - E:/FIXParser/server.py[line:64] - INFO: fix version: auto
+2019-11-19 15:46:26,288 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 15:46:26,289 - E:/FIXParser/server.py[line:69] - INFO: parse elapsed time: 0:00:00.002000
+2019-11-19 15:46:26,295 - E:/FIXParser/server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00.005000
+2019-11-19 16:12:13,311 - server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 16:12:13,311 - server.py[line:64] - INFO: fix version: auto
+2019-11-19 16:12:13,311 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 16:12:13,311 - server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 16:12:13,311 - server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 16:12:21,184 - server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 16:12:21,184 - server.py[line:64] - INFO: fix version: auto
+2019-11-19 16:12:21,184 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 16:12:21,184 - server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 16:12:21,184 - server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 16:12:44,023 - server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 16:12:44,023 - server.py[line:64] - INFO: fix version: auto
+2019-11-19 16:12:44,023 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 16:12:44,038 - server.py[line:69] - INFO: parse elapsed time: 0:00:00.015000
+2019-11-19 16:12:44,038 - server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 16:12:54,239 - server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 16:12:54,239 - server.py[line:64] - INFO: fix version: auto
+2019-11-19 16:12:54,239 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00
+2019-11-19 16:12:54,239 - server.py[line:69] - INFO: parse elapsed time: 0:00:00
+2019-11-19 16:12:54,239 - server.py[line:89] - INFO: sqlite save elapsed time: 0:00:00
+2019-11-19 16:13:16,796 - server.py[line:36] - INFO: an new connection from 127.0.0.1
+2019-11-19 16:13:17,796 - server.py[line:44] - INFO: upload filename: messagedb1.txt
+2019-11-19 16:13:17,842 - server.py[line:64] - INFO: fix version: auto
+2019-11-19 16:13:18,029 - E:\FIXParser\model\fix_parser.py[line:33] - INFO: split elapsed time: 0:00:00.187000
+2019-11-19 16:13:26,543 - server.py[line:69] - INFO: parse elapsed time: 0:00:08.701000
+2019-11-19 16:13:33,760 - server.py[line:89] - INFO: sqlite save elapsed time: 0:00:07.217000
